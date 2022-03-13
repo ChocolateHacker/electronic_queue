@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IUser} from "../../services/user.interfaces";
 
 @Component({
   selector: 'app-queue-wall-page',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./queue-wall-page.component.scss']
 })
 export class QueueWallPageComponent implements OnInit {
+
+  users!: IUser[]
 
   constructor() { }
 

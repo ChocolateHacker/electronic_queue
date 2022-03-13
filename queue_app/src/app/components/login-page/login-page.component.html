@@ -1,0 +1,25 @@
+<button class="button">
+  <a class="link" href="">На главную</a>
+</button>
+<br>
+<button class="button">
+  <a class="link" href="/registration">Регистрация</a>
+</button>
+<form class="login" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="login-content">
+    <H4 class="login-title">Авторизация</H4>
+    <div class="input-field">
+      <label for="email">Email:</label>
+      <input formControlName="email" id="email" type="email">
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="password">Password:</label>
+      <input formControlName="password" id="password" type="password">
+    </div>
+  </div>
+  <br>
+  <div class="login-action">
+    <button type="submit" [disabled]="form.invalid">Войти</button>
+  </div>
+</form>

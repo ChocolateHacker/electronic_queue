@@ -1,0 +1,51 @@
+<button class="button">
+  <a class="link" href="">На главную</a>
+</button>
+<br>
+<button class="button">
+  <a class="link" href="/login">Авторизация</a>
+</button>
+<form class="register" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="register-content">
+    <H4 class="register-title">Создать аккаунт</H4>
+    <div class="input-field">
+      <label for="name">Name:</label>
+      <input formControlName="name" id="name" type="text">
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="name">Second name:</label>
+      <input formControlName="second_name" type="text">
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="email">Email:</label>
+      <input formControlName="email" id="email" type="email">
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="password">Password:</label>
+      <input formControlName="password" id="password" type="password">
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="birthdate">Birthdate:</label>
+      <input formControlName="birthdate" id="birthdate">
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="phone_number">Phone number:</label>
+      <input formControlName="phone_number" id="phone_number">
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="telegram">telegram:</label>
+      <input formControlName="telegram" id="telegram">
+    </div>
+    <br>
+  </div>
+  <br>
+  <div class="register-action">
+    <button type="submit" [disabled]="form.invalid">Зарегистрироваться</button>
+  </div>
+</form>

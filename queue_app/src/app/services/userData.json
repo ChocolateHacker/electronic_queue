@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Всеволод",
+    "second_name": "Пятков",
+    "birthdate": "23.02.2002",
+    "email": "vsev@mail.ru",
+    "phone_number": 89752157623,
+    "password": "1234554321",
+    "post": "author",
+    "telegram": ""
+  },
+  {
+    "name": "Александр",
+    "second_name": "Пушкин",
+    "birthdate": "06.07.1799",
+    "email": "alex.pushka@yandex.ru",
+    "phone_number": 89752156021,
+    "password": "scratchingtheheart",
+    "post": "main-admin",
+    "telegram": ""
+  },
+  {
+    "name": "Марк",
+    "second_name": "Цукерберг",
+    "birthdate": "14.05.1984",
+    "email": "Hack.Facebook@gmail.com",
+    "phone_number": 94752850274,
+    "password": "IHateGoogle",
+    "post": "admin",
+    "telegram": "@instagramOneLove"
+  },
+  {
+    "name": "Георгий",
+    "second_name": "Сучков",
+    "birthdate": "20.03.2002",
+    "email": "astral.step@mail.ru",
+    "phone_number": 89827515734,
+    "password": "Arealghoul",
+    "post": "user",
+    "telegram": "@ghoul"
+  }
+]
