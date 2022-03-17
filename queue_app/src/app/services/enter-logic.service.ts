@@ -1,24 +1,26 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {IUser} from "./user.interfaces";
+import { HttpClient } from '@angular/common/http';
+import { IUser } from './user.interfaces';
+import './userData.json';
+
+
+
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class EnterLogicService {
-  userList!: IUser[]
+    public userList!: IUser[];
 
-  constructor(private http: HttpClient) { }
+    constructor(private _http: HttpClient){
+        return;
+    }
 
-  getData(){
-    this.http.get<IUser[]>('api/userData.json')
-      .subscribe(x => {
-        this.userList = x
-      })
-  }
+    public getData(): void{
+        return;
+    }
 
-  getUser(email: string, password: string){
-
-  }
+    public getUser(email: string, password: string): void{
+        return;
+    }
 }

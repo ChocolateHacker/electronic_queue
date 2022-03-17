@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {EnterLogicService} from "../../services/enter-logic.service";
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { EnterLogicService } from '../../services/enter-logic.service';
+
+
+
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss']
+    selector: 'app-login-page',
+    templateUrl: './login-page.component.html',
+    styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
 
-  form!: FormGroup
+    public form!: FormGroup;
 
-  constructor(private servise: EnterLogicService) { }
+    constructor() {
+        return;
+    }
 
-  ngOnInit(): void {
-    this.form = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(7)])
-    })
-  }
-
-  onSubmit(){
-    this.form.disable()
-    this.servise.getData()
-  }
+    public ngOnInit(): void {
+        this.form = new FormGroup({
+            email: new FormControl(null, [Validators.required, Validators.email]),
+            password: new FormControl(null, [Validators.required, Validators.minLength(7)])
+        });
+    }
 }

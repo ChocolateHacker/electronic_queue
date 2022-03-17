@@ -1,18 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import {IUser} from "../../services/user.interfaces";
+import { IUser } from '../../services/user.interfaces';
+
+
+
 
 @Component({
-  selector: 'app-queue-wall-page',
-  templateUrl: './queue-wall-page.component.html',
-  styleUrls: ['./queue-wall-page.component.scss']
+    selector: 'app-queue-wall-page',
+    templateUrl: './queue-wall-page.component.html',
+    styleUrls: ['./queue-wall-page.component.scss']
 })
 export class QueueWallPageComponent implements OnInit {
 
-  users!: IUser[]
+    public users!: IUser[];
 
-  constructor() { }
+    constructor() {
+        return;
+    }
 
-  ngOnInit(): void {
-  }
+    public ngOnInit(): void {
+        return;
+    }
 
 }

@@ -1,9 +1,9 @@
 export interface IUser{
   name: string,
-  second_name: string,
+  secondName: string,
   birthdate: string
   email: string,
-  phone_number: bigint,
+  phoneNumber: bigint,
   password: string,
   post: string,
   telegram?:string
