@@ -13,8 +13,10 @@ import { EnterLogicService } from '../../services/enter-logic.service';
 export class LoginPageComponent implements OnInit {
 
     public form!: FormGroup;
+    public email!: string;
+    public password!: string;
 
-    constructor() {
+    constructor(private _http: EnterLogicService) {
         return;
     }
 
@@ -23,5 +25,13 @@ export class LoginPageComponent implements OnInit {
             email: new FormControl(null, [Validators.required, Validators.email]),
             password: new FormControl(null, [Validators.required, Validators.minLength(7)])
         });
+    }
+
+    public onSubmit(): void{
+        if(this._http.login(this.form.value.email) && this._http.login(this.form.value.password)){
+            this.form.disable();
+            console.log('Вход выполнен');
+        }
+        this.form.enable();
     }
 }

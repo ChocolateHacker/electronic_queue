@@ -1,40 +1,48 @@
 [
   {
+    "id": 1,
     "name": "Всеволод",
     "second_name": "Пятков",
+    "middle_name": "Константинович",
     "birthdate": "23.02.2002",
     "email": "vsev@mail.ru",
-    "phone_number": 89752157623,
+    "phone_number": "89752157623",
     "password": "1234554321",
     "post": "author",
     "telegram": ""
   },
   {
+    "id": 2,
     "name": "Александр",
     "second_name": "Пушкин",
+    "middle_name": "Сергеевич",
     "birthdate": "06.07.1799",
     "email": "alex.pushka@yandex.ru",
-    "phone_number": 89752156021,
+    "phone_number": "89752156021",
     "password": "scratchingtheheart",
     "post": "main-admin",
     "telegram": ""
   },
   {
+    "id": 3,
     "name": "Марк",
     "second_name": "Цукерберг",
+    "middle_name": "",
     "birthdate": "14.05.1984",
     "email": "Hack.Facebook@gmail.com",
-    "phone_number": 94752850274,
+    "phone_number": "94752850274",
     "password": "IHateGoogle",
     "post": "admin",
     "telegram": "@instagramOneLove"
   },
   {
+    "id": 4,
     "name": "Георгий",
     "second_name": "Сучков",
+    "middle_name": "",
     "birthdate": "20.03.2002",
     "email": "astral.step@mail.ru",
-    "phone_number": 89827515734,
+    "phone_number": "89827515734",
     "password": "Arealghoul",
     "post": "user",
     "telegram": "@ghoul"

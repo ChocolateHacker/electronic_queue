@@ -9,11 +9,13 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { CommonModule } from '@angular/common';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 const appRoutes: Routes = [
     { path: '', component: QueueWallPageComponent },
     { path: 'login', component: LoginPageComponent },
     { path: 'registration', component: RegistrationPageComponent },
+    { path: 'profile/:id', component: UserProfileComponent },
 ];
 
 @NgModule({
@@ -21,7 +23,8 @@ const appRoutes: Routes = [
         AppComponent,
         QueueWallPageComponent,
         LoginPageComponent,
-        RegistrationPageComponent
+        RegistrationPageComponent,
+        UserProfileComponent
     ],
     imports: [
         BrowserModule,
