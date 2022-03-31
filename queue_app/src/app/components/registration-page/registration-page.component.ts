@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EnterLogicService } from '../../services/enter-logic.service';
+import { Router } from '@angular/router';
 
 
 
@@ -12,7 +13,8 @@ import { EnterLogicService } from '../../services/enter-logic.service';
 })
 export class RegistrationPageComponent implements OnInit {
     public form!: FormGroup;
-    constructor(private _http: EnterLogicService) {
+
+    constructor(private _http: EnterLogicService, private _router: Router) {
         this._http.getData();
     }
 
@@ -32,6 +34,7 @@ export class RegistrationPageComponent implements OnInit {
         if(this.form.value){
             this.form.disable();
         }
-        this._http.getData();
+        this._http.registerUser(this.form.value);
+        this._router.navigateByUrl('/login');
     };
 }

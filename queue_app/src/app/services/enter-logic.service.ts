@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IUser } from './user.interfaces';
-import * as data from './userData.json';
+import * as data from './mocks';
 
 
 
@@ -10,32 +10,25 @@ import * as data from './userData.json';
     providedIn: 'root'
 })
 export class EnterLogicService {
-    public userList!: IUser[];
-    public datas: string = JSON.stringify(data);
+    public userList!: any;
 
     constructor(private _http: HttpClient){
-        return;
+        this.userList = data;
     }
 
     public getData(): any{
-        return this.datas;
-    }
-
-    public getBigData(): any{
-        this.getData().subscribe((x: IUser[]) => {
-            this.userList = x;
-        });
+        return this.userList;
     }
 
     public getID(id: number): any{
-        return this.userList.find(x => x.id === id);
+        return this.userList.find((x: { id: number; }) => x.id === id);
     }
 
     public registerUser(userData: FormData): void{
-        return;
+        this.userList.append(userData);
     }
 
     public login(getingData: string): boolean | undefined{
-        return this.datas.includes(getingData);
+        return this.userList.includes(getingData);
     }
 }
