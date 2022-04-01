@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { EnterLogicService } from '../../services/enter-logic.service';
 import { Router } from '@angular/router';
+import { EnterLogicService } from '../../services/enter-logic/enter-logic.service';
 
 
 
@@ -15,11 +15,21 @@ export class RegistrationPageComponent implements OnInit {
     public form!: FormGroup;
 
     constructor(private _http: EnterLogicService, private _router: Router) {
-        this._http.getData();
+        this.createForm();
     }
 
     public ngOnInit(): void {
+    }
+
+    public onSubmit(): void{
+        this.form.disable();
+        this._http.sendOnServer(this.form);
+        this._router.navigate(['/login']);
+    };
+
+    private createForm(): void {
         this.form = new FormGroup({
+            id: new FormControl(null),
             name: new FormControl(null, [Validators.required]),
             second_name: new FormControl(null, [Validators.required]),
             middle_name: new FormControl(null),
@@ -30,11 +40,4 @@ export class RegistrationPageComponent implements OnInit {
             telegram: new FormControl(null)
         });
     }
-    public onSubmit(): void{
-        if(this.form.value){
-            this.form.disable();
-        }
-        this._http.registerUser(this.form.value);
-        this._router.navigateByUrl('/login');
-    };
 }

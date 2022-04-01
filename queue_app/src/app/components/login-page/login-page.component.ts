@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { EnterLogicService } from '../../services/enter-logic.service';
+import { EnterLogicService } from '../../services/enter-logic/enter-logic.service';
 
 
 
@@ -28,10 +28,6 @@ export class LoginPageComponent implements OnInit {
     }
 
     public onSubmit(): void{
-        if(this._http.login(this.form.value.email) && this._http.login(this.form.value.password)){
-            this.form.disable();
-            console.log('Вход выполнен');
-        }
-        this.form.enable();
+        this._http.login(this.form);
     }
 }

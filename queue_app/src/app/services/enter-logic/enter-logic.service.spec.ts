@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { EnterLogicService } from './enter-logic.service';
 
 describe('EnterLogicService', () => {

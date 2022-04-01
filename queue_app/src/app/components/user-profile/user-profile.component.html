@@ -1,1 +1,9 @@
-<p>Она работает и слава богу</p>
+<html>
+<div *ngIf="user">
+    <h1>Личный кабинет</h1>
+      <h2>{{user.secondName}} {{user.name}} {{user.middleName}}</h2>
+      <h3>День рождение: {{user.birthdate}}</h3>
+      <h3>Email: {{user.email}}</h3>
+      <h3>Номер телефона: {{user.phoneNumber}}</h3>
+</div>
+</html>

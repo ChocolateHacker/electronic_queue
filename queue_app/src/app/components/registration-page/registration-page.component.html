@@ -52,6 +52,6 @@
   <strong>*поля обязательные к заполнению</strong>
   <br><br>
   <div class="register-action">
-    <button type="submit" [disabled]="form.invalid">Зарегистрироваться</button>
+    <button type="submit" [disabled]="form.invalid" (click)="onSubmit()">Зарегистрироваться</button>
   </div>
 </form>
