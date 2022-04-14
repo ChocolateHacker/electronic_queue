@@ -47,6 +47,22 @@
       "password": "Arealghoul",
       "post": "user",
       "telegram": "@ghoul"
+    },
+    {
+      "id": 5,
+      "name": "Ксения",
+      "secondName": "Сонина",
+      "middleName": "",
+      "birthdate": "15.01.2002",
+      "email": "mamu.ebal@mail.ru",
+      "phoneNumber": "89827565873",
+      "password": "krasivieGlaza",
+      "post": "user",
+      "telegram": "@DavaiPoshenimsya"
     }
-  ]
+  ],
+  "records": [
+    {
+      
+    }
 }

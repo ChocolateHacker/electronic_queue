@@ -1,0 +1,8 @@
+<p>table works!</p>
+<div *ngFor="let time of times">
+    <a routerLink="/detail/{{times.id}}">
+      <app-table-info [times]="times"></app-table-info>>
+      <br>
+    </a>
+  </div>
+  

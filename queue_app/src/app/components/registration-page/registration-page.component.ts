@@ -19,6 +19,7 @@ export class RegistrationPageComponent implements OnInit {
     }
 
     public ngOnInit(): void {
+        return;
     }
 
     public onSubmit(): void{

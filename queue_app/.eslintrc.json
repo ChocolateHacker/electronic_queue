@@ -13,7 +13,8 @@
     },
     "plugins": [
         "@typescript-eslint",
-        "@angular-eslint"
+        "@angular-eslint",
+        "unused-imports"
     ],
     "rules": {
         "prefer-const": "error",

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IUser } from '../user.interfaces';
+import { IUser } from '../interfaces/user.interfaces';
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 
@@ -12,7 +12,6 @@ import { FormGroup } from '@angular/forms';
 })
 export class EnterLogicService {
     public userList!: IUser[];
-    private _urlSignupUser: string = 'http://localhost:3000/users';
     private _newUser!: IUser;
 
     constructor(private _http: HttpClient, private _router: Router){
@@ -22,7 +21,7 @@ export class EnterLogicService {
     }
 
     public getData(): any{
-        this._http.get<IUser[]>(this._urlSignupUser)
+        this._http.get<IUser[]>('http://localhost:3000/users')
             .subscribe((x: IUser[]) => {
                 this.userList = x;
             });
@@ -34,7 +33,7 @@ export class EnterLogicService {
 
     public sendOnServer(registerForm: FormGroup): void {
         this._newUser = {
-            id: Math.floor(Math.random() * 999),
+            id: registerForm.value.id,
             name: registerForm.value.name,
             secondName: registerForm.value.second_name,
             middleName: registerForm.value.middle_name,
@@ -48,25 +47,23 @@ export class EnterLogicService {
         this.registerUser(registerForm);
     }
 
-    public registerUser(registerUserData: FormGroup): void{
-        this._http.post<IUser>(this._urlSignupUser, this._newUser)
+    public registerUser(registerUserData: FormGroup): void {
+        this._http.post<IUser>('http://localhost:3000/users', this._newUser)
             .subscribe(() => {
-                alert('Signup Successful');
-                registerUserData.reset();
+                alert('Sign up Successful');
             }, () => {
                 alert('Error');
             });
     }
 
-    public login(loginUserData: FormGroup): any{
-        this._http.get<IUser[]>(this._urlSignupUser)
+    public login(loginUserData: FormGroup): void {
+        this._http.get<IUser[]>('http://localhost:3000/users')
             .subscribe((x: IUser[]) => {
                 const user: IUser | undefined = x.find((a: IUser) => {
                     return a.email === loginUserData.value.email && a.password === loginUserData.value.password;
                 });
                 if (user) {
                     this._router.navigate(['profile/' + user.id]);
-                    loginUserData.reset();
                 } else {
                     alert('user not found');
                 }
