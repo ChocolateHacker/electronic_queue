@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EnterLogicService } from 'src/app/services/enter-logic/enter-logic.service';
 import { IUser } from '../../services/interfaces/user.interface';
+import { ActivatedRoute } from '@angular/router';
+import { EnterLogicService } from '../../services/enter-logic/enter-logic.service';
 
 @Component({
-    selector: 'app-user-profile',
-    templateUrl: './user-profile.component.html',
-    styleUrls: ['./user-profile.component.scss']
+    selector: 'app-admin-profile',
+    templateUrl: './admin-profile.component.html',
+    styleUrls: ['./admin-profile.component.scss']
 })
-export class UserProfileComponent implements OnInit {
+export class AdminProfileComponent implements OnInit {
     public user!: IUser | undefined;
 
     constructor(private _routing: ActivatedRoute, private _http: EnterLogicService) {
@@ -25,4 +25,6 @@ export class UserProfileComponent implements OnInit {
 
         return this.user;
     }
+
+
 }

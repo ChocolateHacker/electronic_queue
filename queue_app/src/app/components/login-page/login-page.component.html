@@ -1,10 +1,5 @@
-<button class="button">
-  <a class="link" href="">На главную</a>
-</button>
-<br>
-<button class="button">
-  <a class="link" href="/registration">Регистрация</a>
-</button>
+<a class="link" [routerLink]="['']">На главную</a>
+<a class="link" [routerLink]="['/registration']">Регистрация</a>
 <form class="login" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="login-content">
     <H4 class="login-title">Авторизация</H4>

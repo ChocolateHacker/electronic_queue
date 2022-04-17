@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IRecord } from 'src/app/services/interfaces/record.interfaces';
+import { IRecord } from 'src/app/services/interfaces/record.interface';
 
 @Component({
     selector: 'app-table',
@@ -13,7 +13,7 @@ export class TableComponent implements OnInit {
     constructor() {
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         return;
     }
 

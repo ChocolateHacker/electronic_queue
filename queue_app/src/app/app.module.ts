@@ -12,14 +12,19 @@ import { RegistrationPageComponent } from './components/registration-page/regist
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { TableComponent } from './components/table/table.component';
 import { TableInfoComponent } from './components/table-info/table-info.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { RenameProfileComponent } from './components/rename-profile/rename-profile.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'queue', pathMatch: 'full' },
     { path: 'queue', loadChildren: ():Promise<QueueModule> => import('./components/queue-wall-page/queue-wall-page.module').then((x: any) => x.QueueModule) },
     { path: 'login', component: LoginPageComponent },
     { path: 'registration', component: RegistrationPageComponent },
-    { path: 'profile/:id', component: UserProfileComponent },
+    { path: 'us-profile/:id', component: UserProfileComponent },
+    { path: 'ad-profile/:id', component: AdminProfileComponent },
     { path: 'table', component: TableComponent },
+    { path: 'rename/:id', component: RenameProfileComponent },
+    { path: '**', redirectTo: 'queue' },
 ];
 
 @NgModule({
@@ -29,7 +34,9 @@ const appRoutes: Routes = [
         RegistrationPageComponent,
         UserProfileComponent,
         TableComponent,
-        TableInfoComponent
+        TableInfoComponent,
+        AdminProfileComponent,
+        RenameProfileComponent
     ],
     imports: [
         BrowserModule,
