@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IUser } from '../interfaces/user.interfaces';
+import { IUser } from '../interfaces/user.interface';
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 
@@ -62,8 +62,10 @@ export class EnterLogicService {
                 const user: IUser | undefined = x.find((a: IUser) => {
                     return a.email === loginUserData.value.email && a.password === loginUserData.value.password;
                 });
-                if (user) {
-                    this._router.navigate(['profile/' + user.id]);
+                if (user?.post === 'admin') {
+                    this._router.navigate(['ad-profile/' + user.id]);
+                } else if (user?.post === 'user') {
+                    this._router.navigate(['us-profile/' + user.id]);
                 } else {
                     alert('user not found');
                 }
