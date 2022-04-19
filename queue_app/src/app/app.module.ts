@@ -36,7 +36,7 @@ const appRoutes: Routes = [
         TableComponent,
         TableInfoComponent,
         AdminProfileComponent,
-        RenameProfileComponent
+        RenameProfileComponent,
     ],
     imports: [
         BrowserModule,
@@ -45,7 +45,7 @@ const appRoutes: Routes = [
         FormsModule,
         ReactiveFormsModule,
         CommonModule,
-        HttpClientModule
+        HttpClientModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

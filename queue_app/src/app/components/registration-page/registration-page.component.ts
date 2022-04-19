@@ -14,7 +14,10 @@ import { EnterLogicService } from '../../services/enter-logic/enter-logic.servic
 export class RegistrationPageComponent implements OnInit {
     public form!: FormGroup;
 
-    constructor(private _http: EnterLogicService, private _router: Router) {
+    constructor(
+        private _http: EnterLogicService, 
+        private _router: Router
+    ) {
         this.createForm();
     }
 

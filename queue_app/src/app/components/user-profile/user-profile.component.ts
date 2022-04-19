@@ -11,7 +11,10 @@ import { IUser } from '../../services/interfaces/user.interface';
 export class UserProfileComponent implements OnInit {
     public user!: IUser | undefined;
 
-    constructor(private _routing: ActivatedRoute, private _http: EnterLogicService) {
+    constructor(
+        private _routing: ActivatedRoute, 
+        private _http: EnterLogicService
+    ) {
         return;
     }
 
@@ -25,4 +28,5 @@ export class UserProfileComponent implements OnInit {
 
         return this.user;
     }
+
 }

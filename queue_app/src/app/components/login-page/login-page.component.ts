@@ -17,7 +17,6 @@ export class LoginPageComponent implements OnInit {
     public password!: string;
 
     constructor(private _http: EnterLogicService) {
-        return;
     }
 
     public ngOnInit(): void {

@@ -1,6 +1,6 @@
-<form class="register" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="register-content">
-      <H4 class="register-title">Создать аккаунт</H4>
+<form class="rename" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="rename-content">
+      <H4 class="rename-title">Создать аккаунт</H4>
       <div class="input-field">
         <label for="name">Name*:</label>
         <input formControlName="name" id="name" type="text" placeholder="Иван" value="">
@@ -44,7 +44,7 @@
     </div>
     <strong>*поля обязательные к заполнению</strong>
     <br><br>
-    <div class="register-action">
+    <div class="rename-action">
       <button type="submit" [disabled]="form.invalid" (click)="onSubmit()">Внести изменения</button>
     </div>
   </form>

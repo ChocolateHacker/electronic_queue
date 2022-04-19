@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IUser } from '../interfaces/user.interface';
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import { switchMap, timer } from 'rxjs';
 
 
 
@@ -11,24 +12,33 @@ import { FormGroup } from '@angular/forms';
     providedIn: 'root'
 })
 export class EnterLogicService {
+    public adress: string = 'http://localhost:3000/users';
     public userList!: IUser[];
     private _newUser!: IUser;
 
-    constructor(private _http: HttpClient, private _router: Router){
+    constructor(
+        private _http: HttpClient,
+        private _router: Router
+    ){
         setInterval(() => {
             this.getData();
         }, 2000);
     }
 
-    public getData(): any{
-        this._http.get<IUser[]>('http://localhost:3000/users')
+    public getData(): void {
+        this._http.get<IUser[]>(this.adress)
             .subscribe((x: IUser[]) => {
                 this.userList = x;
             });
     }
 
-    public getID(id: number): any{
-        return this.userList.find((x: { id: number; }) => x.id === id);
+    public getID(id: number): IUser {
+        const temp: IUser | undefined = this.userList.find((x: { id: number; }) => x.id === id);
+        if (temp) {
+            return temp;
+        } else {
+            throw new Error('Сын шлюхи');
+        }
     }
 
     public sendOnServer(registerForm: FormGroup): void {
@@ -48,7 +58,7 @@ export class EnterLogicService {
     }
 
     public registerUser(registerUserData: FormGroup): void {
-        this._http.post<IUser>('http://localhost:3000/users', this._newUser)
+        this._http.post<IUser>(this.adress, this._newUser)
             .subscribe(() => {
                 alert('Sign up Successful');
             }, () => {
@@ -57,7 +67,7 @@ export class EnterLogicService {
     }
 
     public login(loginUserData: FormGroup): void {
-        this._http.get<IUser[]>('http://localhost:3000/users')
+        this._http.get<IUser[]>(this.adress)
             .subscribe((x: IUser[]) => {
                 const user: IUser | undefined = x.find((a: IUser) => {
                     return a.email === loginUserData.value.email && a.password === loginUserData.value.password;
