@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EnterLogicService } from 'src/app/services/enter-logic/enter-logic.service';
 import { IRecord } from 'src/app/services/interfaces/record.interface';
+import { RecordsLogicService } from 'src/app/services/records-logic/records-logic.service';
 
 @Component({
     selector: 'app-table',
@@ -11,15 +11,12 @@ export class TableComponent implements OnInit {
 
     public times!: IRecord[];
 
-    constructor(private _http: EnterLogicService) {
-
-        // this._http.getRecords()
-        //     .subscribe((value: IRecord) => {
-        //         this.times.push(new TableViewModel(value))
-        //     })
+    constructor(private _http: RecordsLogicService) {
     }
 
     public ngOnInit(): void {
-        return;
+        setInterval(() => {
+            this.times = this._http.dataList;
+        }, 1);
     }
 }

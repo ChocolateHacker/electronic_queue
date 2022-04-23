@@ -12,7 +12,7 @@ export class AdminProfileComponent implements OnInit {
     public user!: IUser | undefined;
 
     constructor(
-        private _routing: ActivatedRoute, 
+        private _routing: ActivatedRoute,
         private _http: EnterLogicService
     ) {
         return;

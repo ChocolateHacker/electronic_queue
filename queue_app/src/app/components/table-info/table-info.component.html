@@ -1,1 +1,9 @@
-<p>table-info works!</p>
+<div class="table-info">
+  <div *ngIf="time">
+    <h3>Имя врача: {{time.docName}}</h3>
+    <h3>Тип: {{time.activity}}</h3>
+    <h3>Время приема: {{time.time}}</h3>
+    <h3>{{time.busyness}}</h3>
+    <br>
+  </div>
+</div>

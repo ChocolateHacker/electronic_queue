@@ -2,12 +2,14 @@ import { IRecord } from 'src/app/services/interfaces/record.interface';
 
 export class TableViewModel {
     public id: number;
-    public name: string;
-    public office: string;
+    public time: string;
+    public docName: string;
+    public activity: string;
 
     constructor(model: IRecord) {
-        this.id = model.id,
-        this.name = model.name;
-        this.office = model.office;
+        this.id = model.id;
+        this.time = model.time;
+        this.docName = model.docName;
+        this.activity = model.activity;
     }
 }

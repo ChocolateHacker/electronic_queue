@@ -15,7 +15,7 @@ export class RegistrationPageComponent implements OnInit {
     public form!: FormGroup;
 
     constructor(
-        private _http: EnterLogicService, 
+        private _http: EnterLogicService,
         private _router: Router
     ) {
         this.createForm();

@@ -14,6 +14,7 @@ import { TableComponent } from './components/table/table.component';
 import { TableInfoComponent } from './components/table-info/table-info.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 import { RenameProfileComponent } from './components/rename-profile/rename-profile.component';
+import { TableDetailComponent } from './components/table-detail/table-detail.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'queue', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
     { path: 'us-profile/:id', component: UserProfileComponent },
     { path: 'ad-profile/:id', component: AdminProfileComponent },
     { path: 'table', component: TableComponent },
+    { path: 'table/:id', component: TableDetailComponent },
     { path: 'rename/:id', component: RenameProfileComponent },
     { path: '**', redirectTo: 'queue' },
 ];
@@ -37,6 +39,7 @@ const appRoutes: Routes = [
         TableInfoComponent,
         AdminProfileComponent,
         RenameProfileComponent,
+        TableDetailComponent,
     ],
     imports: [
         BrowserModule,

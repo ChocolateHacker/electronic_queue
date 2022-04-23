@@ -1,7 +1,7 @@
-<p>table works!</p>
+<a class="link" [routerLink]="['/queue']">На главную</a>
 <div *ngFor="let time of times">
-    <a routerLink="/detail/{{times}}">
-      <app-table-info></app-table-info>>
-      <br>
-    </a>
-  </div>
+  <a routerLink="/table/{{time.id}}">
+    <app-table-info [time]="time"></app-table-info>
+    <br>
+  </a>
+</div>

@@ -1,5 +1,7 @@
 export interface IRecord{
     id: number,
-    name: string,
-    office: string,
+    time: string;
+    docName: string,
+    activity: string,
+    busyness: string
 }

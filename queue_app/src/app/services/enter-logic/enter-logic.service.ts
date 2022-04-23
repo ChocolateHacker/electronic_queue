@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { IUser } from '../interfaces/user.interface';
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
-import { switchMap, timer } from 'rxjs';
 
 
 
