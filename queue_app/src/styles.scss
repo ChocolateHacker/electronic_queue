@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 html{
   text-align: center;
-  height: 2000px;
-  background: radial-gradient(at top, #FEFFFF, #A7CECC);
+  background: linear-gradient(to right, blue, pink);
 }
 
 a.link {
@@ -13,8 +12,8 @@ a.link {
   text-decoration: none;
   font-weight: 300;
   font-size: 14px;
-  border: #1071FF 1px solid;
-  color: #1071FF;
+  border: #ffffff 1px solid;
+  color: #ffffff;
   padding: 3px;
   padding-left: 5px;
   padding-right: 5px;

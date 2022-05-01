@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IRecord } from 'src/app/services/interfaces/record.interface';
+import { TableViewModel } from 'src/app/models/table.model';
 
 @Component({
     selector: 'app-table-info',
@@ -8,12 +8,10 @@ import { IRecord } from 'src/app/services/interfaces/record.interface';
 })
 export class TableInfoComponent implements OnInit {
     @Input()
-    public time!: IRecord;
+    public time!: TableViewModel;
 
-    constructor() {
-    }
+    constructor() { }
 
-    public ngOnInit(): void {
-    }
+    public ngOnInit(): void { }
 
 }

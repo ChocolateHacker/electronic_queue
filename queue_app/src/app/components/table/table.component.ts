@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IRecord } from 'src/app/services/interfaces/record.interface';
+import { TableViewModel } from 'src/app/models/table.model';
 import { RecordsLogicService } from 'src/app/services/records-logic/records-logic.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { RecordsLogicService } from 'src/app/services/records-logic/records-logi
 })
 export class TableComponent implements OnInit {
 
-    public times!: IRecord[];
+    public times!: TableViewModel[];
 
     constructor(private _http: RecordsLogicService) {
     }

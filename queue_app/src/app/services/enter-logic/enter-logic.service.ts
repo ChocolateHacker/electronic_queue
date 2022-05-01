@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { IUser } from '../interfaces/user.interface';
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import { Observable, of, switchMap } from 'rxjs';
+import { UserViewModel } from 'src/app/models/user.model';
 
 
 
@@ -11,9 +13,9 @@ import { FormGroup } from '@angular/forms';
     providedIn: 'root'
 })
 export class EnterLogicService {
-    public adress: string = 'http://localhost:3000/users';
-    public userList!: IUser[];
-    private _newUser!: IUser;
+    public readonly adress: string = 'http://localhost:3000/users';
+    public userList!: UserViewModel[];
+    private _newUser!: UserViewModel;
 
     constructor(
         private _http: HttpClient,
@@ -65,21 +67,30 @@ export class EnterLogicService {
             });
     }
 
-    public login(loginUserData: FormGroup): void {
-        this._http.get<IUser[]>(this.adress)
-            .subscribe((x: IUser[]) => {
-                const user: IUser | undefined = x.find((a: IUser) => {
-                    return a.email === loginUserData.value.email && a.password === loginUserData.value.password;
-                });
-                if (user?.post === 'admin') {
-                    this._router.navigate(['ad-profile/' + user.id]);
-                } else if (user?.post === 'user') {
-                    this._router.navigate(['us-profile/' + user.id]);
-                } else {
-                    alert('user not found');
-                }
-            }, () => {
-                alert('Error');
-            });
+    public login(email: string, password: string) : Observable<boolean> {
+        return this._http.post<Response>(this.adress, {
+            email,
+            password,
+        }).pipe(switchMap(() => {
+            return of(true);
+        }));
     }
+
+    // public login(loginUserData: FormGroup): void {
+    //     this._http.get<IUser[]>(this.adress)
+    //         .subscribe((x: IUser[]) => {
+    //             const user: IUser | undefined = x.find((a: IUser) => {
+    //                 return a.email === loginUserData.value.email && a.password === loginUserData.value.password;
+    //             });
+    //             if (user?.post === 'admin') {
+    //                 this._router.navigate(['ad-profile/' + user.id]);
+    //             } else if (user?.post === 'user') {
+    //                 this._router.navigate(['us-profile/' + user.id]);
+    //             } else {
+    //                 alert('user not found');
+    //             }
+    //         }, () => {
+    //             alert('Error');
+    //         });
+    // }
 }

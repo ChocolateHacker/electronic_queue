@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TableViewModel } from 'src/app/models/table.model';
 import { IRecord } from 'src/app/services/interfaces/record.interface';
 import { RecordsLogicService } from 'src/app/services/records-logic/records-logic.service';
 
@@ -9,7 +10,7 @@ import { RecordsLogicService } from 'src/app/services/records-logic/records-logi
     styleUrls: ['./table-detail.component.scss']
 })
 export class TableDetailComponent implements OnInit {
-    public time!: IRecord;
+    public time!: TableViewModel;
     constructor(
       private _routing: ActivatedRoute,
       private _http: RecordsLogicService
