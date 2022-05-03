@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from '../../services/interfaces/user.interface';
 import { ActivatedRoute } from '@angular/router';
-import { EnterLogicService } from '../../services/enter-logic/enter-logic.service';
+import { EnterLogicService } from '../auth/service/enter-logic.service';
 
 @Component({
     selector: 'app-admin-profile',

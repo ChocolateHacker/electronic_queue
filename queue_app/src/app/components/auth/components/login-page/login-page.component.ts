@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { EnterLogicService } from '../../services/enter-logic/enter-logic.service';
+import { EnterLogicService } from '../../service/enter-logic.service';
 import { RouterModule } from '@angular/router';
 
 
@@ -18,7 +18,8 @@ export class LoginPageComponent implements OnInit {
 
     constructor(
         public authorization: EnterLogicService,
-        private _router: RouterModule
+        private _router: RouterModule,
+        private _http: EnterLogicService
     ) {
     }
 
@@ -30,11 +31,12 @@ export class LoginPageComponent implements OnInit {
     }
 
     public onSubmit(): void{
-        this.authorization.login(
-            this.form.controls['email'].value,
-            this.form.controls['password'].value)
-            .subscribe(() => {
-                this._router.navigate['ad-profile/' + user.id];
-            });
+        this._http.login(this.form);
+        // this.authorization.login(
+        //     this.form.controls['email'].value,
+        //     this.form.controls['password'].value)
+        //     .subscribe(() => {
+        //         this._router.navigate['ad-profile/' + user.id];
+        //     });
     }
 }

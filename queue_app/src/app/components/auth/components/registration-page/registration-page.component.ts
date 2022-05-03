@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { EnterLogicService } from '../../services/enter-logic/enter-logic.service';
+import { EnterLogicService } from '../../service/enter-logic.service';
 
 
 

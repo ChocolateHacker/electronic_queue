@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 html{
   text-align: center;
-  background: linear-gradient(to right, blue, pink);
+  background: linear-gradient(to right, rgb(77, 77, 241), pink);
 }
 
 a.link {
-  width:90px;
+  width:100px;
   text-align:center;
   display:block;
   font-family: arial;
@@ -17,15 +17,15 @@ a.link {
   padding: 3px;
   padding-left: 5px;
   padding-right: 5px;
-   margin: 20px auto;
+  margin: 20px auto;
   transition: .5s;
   border-radius: 0px;
 }
 a.link:hover {
   top: 5px;
   transition: .5s;
-  color: #10FF58;
-  border: #10FF58 1px solid;
+  color: #6de996;
+  border: #6de996 1px solid;
   border-radius: 10px;
 }
 a.link:active {

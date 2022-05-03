@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IUser } from '../interfaces/user.interface';
+import { IUser } from '../../../services/interfaces/user.interface';
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
-import { Observable, of, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { UserViewModel } from 'src/app/models/user.model';
 
 
@@ -23,7 +23,7 @@ export class EnterLogicService {
     ){
         setInterval(() => {
             this.getData();
-        }, 2000);
+        }, 1000);
     }
 
     public getData(): void {
@@ -38,7 +38,7 @@ export class EnterLogicService {
         if (temp) {
             return temp;
         } else {
-            throw new Error('Сын шлюхи');
+            throw new Error('error');
         }
     }
 
@@ -59,7 +59,7 @@ export class EnterLogicService {
     }
 
     public registerUser(registerUserData: FormGroup): void {
-        this._http.post<IUser>(this.adress, this._newUser)
+        this.postUser()
             .subscribe(() => {
                 alert('Sign up Successful');
             }, () => {
@@ -67,30 +67,31 @@ export class EnterLogicService {
             });
     }
 
-    public login(email: string, password: string) : Observable<boolean> {
-        return this._http.post<Response>(this.adress, {
-            email,
-            password,
-        }).pipe(switchMap(() => {
-            return of(true);
-        }));
+    public postUser(): Observable<IUser>{
+        return this._http.post<IUser>(this.adress, this._newUser);
     }
 
-    // public login(loginUserData: FormGroup): void {
-    //     this._http.get<IUser[]>(this.adress)
-    //         .subscribe((x: IUser[]) => {
-    //             const user: IUser | undefined = x.find((a: IUser) => {
-    //                 return a.email === loginUserData.value.email && a.password === loginUserData.value.password;
-    //             });
-    //             if (user?.post === 'admin') {
-    //                 this._router.navigate(['ad-profile/' + user.id]);
-    //             } else if (user?.post === 'user') {
-    //                 this._router.navigate(['us-profile/' + user.id]);
-    //             } else {
-    //                 alert('user not found');
-    //             }
-    //         }, () => {
-    //             alert('Error');
-    //         });
-    // }
+    public getUser(): Observable<IUser[]>{
+        return this._http.get<IUser[]>(this.adress);
+    }
+
+    public login(loginUserData: FormGroup): void {
+        this.getUser()
+            .subscribe({
+                next: (x: IUser[]) => {
+                    const user: IUser | undefined = x.find((a: IUser) => {
+                        return a.email === loginUserData.value.email && a.password === loginUserData.value.password;
+                    });
+                    if (user?.post === 'admin') {
+                        this._router.navigate(['ad-profile/' + user.id]);
+                    } else if (user?.post === 'user') {
+                        this._router.navigate(['us-profile/' + user.id]);
+                    } else {
+                        alert('user not found');
+                    }
+                }, error: () => {
+                    alert('Error');
+                }
+            });
+    }
 }

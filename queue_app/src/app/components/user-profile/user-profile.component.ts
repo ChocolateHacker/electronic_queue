@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EnterLogicService } from 'src/app/services/enter-logic/enter-logic.service';
+import { EnterLogicService } from 'src/app/components/auth/service/enter-logic.service';
 import { IUser } from '../../services/interfaces/user.interface';
 
 @Component({
