@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EnterLogicService } from 'src/app/components/auth/service/enter-logic.service';
-import { IUser } from '../../services/interfaces/user.interface';
+import { IUser } from '../../models/interfaces/user.interface';
+import { EnterLogicService } from '../modules/auth/service/enter-logic.service';
 
 @Component({
     selector: 'app-user-profile',
@@ -15,18 +15,14 @@ export class UserProfileComponent implements OnInit {
         private _routing: ActivatedRoute,
         private _http: EnterLogicService
     ) {
-        return;
     }
 
     public ngOnInit(): void {
-        this.getInfo();
-    }
-
-    public getInfo(): IUser | undefined {
         const id: number = Number(this._routing.snapshot.paramMap.get('id'));
-        this.user = this._http.getID(id);
-
-        return this.user;
+        this._http.getUser(id)
+            .subscribe((user: IUser) => {
+                this.user = user;
+            });
     }
 
 }

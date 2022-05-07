@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IUser } from '../../../services/interfaces/user.interface';
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { UserViewModel } from 'src/app/models/user.model';
+import { IUser } from 'src/app/models/interfaces/user.interface';
 
 
 
@@ -21,9 +21,6 @@ export class EnterLogicService {
         private _http: HttpClient,
         private _router: Router
     ){
-        setInterval(() => {
-            this.getData();
-        }, 1000);
     }
 
     public getData(): void {
@@ -67,16 +64,9 @@ export class EnterLogicService {
             });
     }
 
-    public postUser(): Observable<IUser>{
-        return this._http.post<IUser>(this.adress, this._newUser);
-    }
-
-    public getUser(): Observable<IUser[]>{
-        return this._http.get<IUser[]>(this.adress);
-    }
-
+    //subscribe вынести в login-page component
     public login(loginUserData: FormGroup): void {
-        this.getUser()
+        this.getUsers()
             .subscribe({
                 next: (x: IUser[]) => {
                     const user: IUser | undefined = x.find((a: IUser) => {
@@ -93,5 +83,20 @@ export class EnterLogicService {
                     alert('Error');
                 }
             });
+    }
+
+    public postUser(): Observable<IUser>{
+        return this._http.post<IUser>(this.adress, this._newUser);
+    }
+
+    public getUser(id: number): Observable<IUser>{
+        return this._http.get<IUser[]>(this.adress)
+            .pipe(map((users: IUser[]) => {
+                return users.filter((user: IUser) => user.id === id)[0];
+            }));
+    }
+
+    public getUsers(): Observable<IUser[]> {
+        return this._http.get<IUser[]>(this.adress);
     }
 }

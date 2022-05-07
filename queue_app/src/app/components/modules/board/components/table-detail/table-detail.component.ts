@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TableViewModel } from 'src/app/models/table.model';
-import { IRecord } from 'src/app/services/interfaces/record.interface';
-import { RecordsLogicService } from 'src/app/services/records-logic/records-logic.service';
+import { IRecord } from 'src/app/models/interfaces/record.interface';
+import { RecordsLogicService } from 'src/app/components/modules/board/services/records-logic.service';
 
 @Component({
     selector: 'app-table-detail',

@@ -8,13 +8,12 @@ import { FormGroup } from '@angular/forms';
 })
 export class RenameProfileComponent implements OnInit {
     public form!: FormGroup;
-    constructor() { }
-
-    public ngOnInit(): void {
-        //написать запрос на получение данных о юзере 
+    constructor() {
     }
 
-    public onSubmit(): void{
+    public ngOnInit(): void {
+    }
 
+    public onSubmit(): void {
     }
 }

@@ -1,7 +1,0 @@
-<a class="link" [routerLink]="['/queue']">На главную</a>
-<div *ngFor="let time of times">
-  <a routerLink="/table/{{time.id}}">
-    <app-table-info [time]="time"></app-table-info>
-    <br>
-  </a>
-</div>

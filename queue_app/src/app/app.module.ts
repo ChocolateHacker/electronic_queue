@@ -6,15 +6,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginPageComponent } from './components/auth/components/login-page/login-page.component';
+import { LoginPageComponent } from './components/modules/auth/components/login-page/login-page.component';
 import { QueueModule } from './components/queue-wall-page/queue-wall-page.module';
-import { RegistrationPageComponent } from './components/auth/components/registration-page/registration-page.component';
+import { RegistrationPageComponent } from './components/modules/auth/components/registration-page/registration-page.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
-import { TableComponent } from './components/table/table.component';
-import { TableInfoComponent } from './components/table-info/table-info.component';
+import { TableComponent } from './components/modules/board/components/table/table.component';
+import { TableInfoComponent } from './components/modules/board/components/table-info/table-info.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { TableDetailComponent } from './components/modules/board/components/table-detail/table-detail.component';
+import { SkeletonLoaderModule } from './components/skeleton-loader/skeleton-loader.module';
 import { RenameProfileComponent } from './components/rename-profile/rename-profile.component';
-import { TableDetailComponent } from './components/table-detail/table-detail.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'queue', pathMatch: 'full' },
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
     { path: 'rename/:id', component: RenameProfileComponent },
     { path: '**', redirectTo: 'queue' },
 ];
+// component: LoginPageComponent
 
 @NgModule({
     declarations: [
@@ -40,6 +43,7 @@ const appRoutes: Routes = [
         AdminProfileComponent,
         RenameProfileComponent,
         TableDetailComponent,
+        NavbarComponent
     ],
     imports: [
         BrowserModule,
@@ -49,6 +53,7 @@ const appRoutes: Routes = [
         ReactiveFormsModule,
         CommonModule,
         HttpClientModule,
+        SkeletonLoaderModule
     ],
     providers: [],
     bootstrap: [AppComponent]
