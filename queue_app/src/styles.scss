@@ -1,11 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
 html{
   text-align: center;
   background: #ffffff;
 }
 
 body { 
-  margin: 0; 
+  margin: 0;
+  padding: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
 
@@ -22,15 +22,15 @@ a.link {
   padding: 3px;
   padding-left: 5px;
   padding-right: 5px;
-  margin: 20px auto;
+  margin: 10px auto;
   transition: .5s;
   border-radius: 0px;
 }
 a.link:hover {
   top: 5px;
   transition: .5s;
-  color: #3513cc;
-  border: #3513cc 1px solid;
+  color: #673AB7;
+  border: #673AB7 1px solid;
   border-radius: 10px;
 }
 a.link:active {
@@ -38,23 +38,4 @@ a.link:active {
   border: #1A1A1A 1px solid;
   transition: .07s;
   background-color: #FFF;
-}
-
-@media (min-width: 891px)  {
-  body {
-      height: 93vh;
-      overflow: hidden;
-  }
-}
-
-@media (max-width: 890px)  {
-  .body {
-      overflow: auto;
-  }
-}
-
-@media (max-width: 400px)  {
-  .body {
-      overflow: auto;
-  }
 }

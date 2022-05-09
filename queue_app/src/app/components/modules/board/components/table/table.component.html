@@ -2,9 +2,7 @@
 <div class="load">
 <app-skeleton-loader *ngIf="!load"></app-skeleton-loader>
   <div *ngFor="let record of records">
-    <a routerLink="/table/{{record.id}}">
-      <app-table-info [time]="record"></app-table-info>
-      <br>
-    </a>
+    <app-table-info [time]="record"></app-table-info>
+    <br>
   </div>
 </div>

@@ -17,6 +17,8 @@ import { TableDetailComponent } from './components/modules/board/components/tabl
 import { SkeletonLoaderModule } from './components/skeleton-loader/skeleton-loader.module';
 import { RenameProfileComponent } from './components/rename-profile/rename-profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'queue', pathMatch: 'full' },
@@ -53,7 +55,9 @@ const appRoutes: Routes = [
         ReactiveFormsModule,
         CommonModule,
         HttpClientModule,
-        SkeletonLoaderModule
+        SkeletonLoaderModule,
+        BrowserAnimationsModule,
+        MatToolbarModule
     ],
     providers: [],
     bootstrap: [AppComponent]

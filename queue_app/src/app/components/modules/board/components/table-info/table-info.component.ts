@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TableViewModel } from 'src/app/models/table.model';
 
 @Component({
@@ -10,8 +11,12 @@ export class TableInfoComponent implements OnInit {
     @Input()
     public time!: TableViewModel;
 
-    constructor() { }
+    constructor(private _http: Router) { }
 
     public ngOnInit(): void { }
 
+    public onSubmit(): void{
+        alert('Сначала надо авторизироваться');
+        this._http.navigate(['/login']);
+    }
 }

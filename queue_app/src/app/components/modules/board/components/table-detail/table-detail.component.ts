@@ -20,11 +20,12 @@ export class TableDetailComponent implements OnInit {
         this.getInfo();
     }
 
-    public getInfo(): IRecord | undefined {
+    public getInfo(): void {
         const id: number = Number(this._routing.snapshot.paramMap.get('id'));
-        this.time = this._http.getID(id);
-
-        return this.time;
+        this._http.getRecord(id)
+            .subscribe((time: IRecord) => {
+                this.time = time;
+            });
     }
 
 }

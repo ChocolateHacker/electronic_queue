@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from '../../../models/interfaces/user.interface';
+import { UserViewModel } from 'src/app/models/user.model';
 
 
 
@@ -11,7 +11,7 @@ import { IUser } from '../../../models/interfaces/user.interface';
 })
 export class QueueWallPageComponent implements OnInit {
 
-    public users!: IUser[];
+    public users!: UserViewModel[];
 
     constructor() {
         return;

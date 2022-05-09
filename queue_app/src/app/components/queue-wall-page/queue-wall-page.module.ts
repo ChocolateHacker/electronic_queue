@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { QueueWallPageComponent } from './pages/queue-wall-page.component';
+import { QueueWallPageComponent } from './queue-wall-page.component';
 
 
 const components: any[] = [
