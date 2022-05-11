@@ -1,0 +1,13 @@
+<a class="link" [routerLink]="['/queue']">На главную</a>
+<div class="load">
+<app-skeleton-loader *ngIf="!load"></app-skeleton-loader>
+<div *ngIf="!showAll">
+  <div *ngFor="let record of records | slice:0:size">
+    <app-table-info [time]="record"></app-table-info>
+    <br>
+  </div>
+</div>
+<div *ngIf="!showButton">
+  <button *ngIf="load" (click)="onSubmit()">Показать все</button>
+</div>
+</div>

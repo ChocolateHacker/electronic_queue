@@ -1,7 +1,6 @@
 import { IUser } from './interfaces/user.interface';
 
 export class UserViewModel{
-    [x: string]: any;
     public id: number;
     public name: string;
     public secondName: string;

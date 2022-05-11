@@ -1,5 +1,4 @@
 export interface IUser{
-  [x: string]: any;
   id: number,
   name: string,
   secondName: string,

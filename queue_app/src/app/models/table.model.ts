@@ -5,11 +5,13 @@ export class TableViewModel {
     public time: string;
     public docName: string;
     public activity: string;
+    public isFree: boolean;
 
     constructor(model: IRecord) {
         this.id = model.id;
         this.time = model.time;
         this.docName = model.docName;
         this.activity = model.activity;
+        this.isFree = model.isFree;
     }
 }

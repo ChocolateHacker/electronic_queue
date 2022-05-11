@@ -1,8 +1,0 @@
-<a class="link" [routerLink]="['/queue']">На главную</a>
-<div class="load">
-<app-skeleton-loader *ngIf="!load"></app-skeleton-loader>
-  <div *ngFor="let record of records">
-    <app-table-info [time]="record"></app-table-info>
-    <br>
-  </div>
-</div>

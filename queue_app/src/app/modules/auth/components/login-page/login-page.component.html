@@ -1,0 +1,28 @@
+<a class="link" [routerLink]="['']">На главную</a>
+<a class="link" [routerLink]="['/registration']">Регистрация</a>
+<form class="login" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="login-content">
+    <H4 class="login-title">Авторизация</H4>
+    <div class="input-field">
+      <label for="email">Email:</label>
+      <input formControlName="email" id="email" type="email">
+      <div class="form__error"
+        *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+          Неверный формат или не заполнено поле
+        </div>
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="password">Password:</label>
+      <input formControlName="password" id="password" type="password">
+      <div class="form__error"
+        *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+          Неверный формат
+        </div>
+    </div>
+  </div>
+  <br>
+  <div class="login-action">
+    <button type="submit" [disabled]="form.invalid">Войти</button>
+  </div>
+</form>

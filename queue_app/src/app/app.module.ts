@@ -6,19 +6,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginPageComponent } from './components/modules/auth/components/login-page/login-page.component';
 import { QueueModule } from './components/queue-wall-page/queue-wall-page.module';
-import { RegistrationPageComponent } from './components/modules/auth/components/registration-page/registration-page.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
-import { TableComponent } from './components/modules/board/components/table/table.component';
-import { TableInfoComponent } from './components/modules/board/components/table-info/table-info.component';
-import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
-import { TableDetailComponent } from './components/modules/board/components/table-detail/table-detail.component';
-import { SkeletonLoaderModule } from './components/skeleton-loader/skeleton-loader.module';
-import { RenameProfileComponent } from './components/rename-profile/rename-profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { LoginPageComponent } from './modules/auth/components/login-page/login-page.component';
+import { RegistrationPageComponent } from './modules/auth/components/registration-page/registration-page.component';
+import { SkeletonLoaderModule } from './modules/board/components/skeleton-loader/skeleton-loader.module';
+import { TableInfoComponent } from './modules/board/components/table-info/table-info.component';
+import { TableComponent } from './modules/board/components/table/table.component';
+import { UserProfileComponent } from './modules/other/components/user-profile/user-profile.component';
+import { AdminProfileComponent } from './modules/other/components/admin-profile/admin-profile.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'queue', pathMatch: 'full' },
@@ -28,11 +26,9 @@ const appRoutes: Routes = [
     { path: 'us-profile/:id', component: UserProfileComponent },
     { path: 'ad-profile/:id', component: AdminProfileComponent },
     { path: 'table', component: TableComponent },
-    { path: 'table/:id', component: TableDetailComponent },
-    { path: 'rename/:id', component: RenameProfileComponent },
+    { path: 'rename/:id', component: UserProfileComponent },
     { path: '**', redirectTo: 'queue' },
 ];
-// component: LoginPageComponent
 
 @NgModule({
     declarations: [
@@ -43,8 +39,6 @@ const appRoutes: Routes = [
         TableComponent,
         TableInfoComponent,
         AdminProfileComponent,
-        RenameProfileComponent,
-        TableDetailComponent,
         NavbarComponent
     ],
     imports: [
@@ -55,8 +49,8 @@ const appRoutes: Routes = [
         ReactiveFormsModule,
         CommonModule,
         HttpClientModule,
-        SkeletonLoaderModule,
         BrowserAnimationsModule,
+        SkeletonLoaderModule,
         MatToolbarModule
     ],
     providers: [],
