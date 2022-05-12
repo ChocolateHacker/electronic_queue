@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormGroup } from '@angular/forms';
 import { map, Observable } from 'rxjs';
 import { UserViewModel } from 'src/app/models/user.model';
 
@@ -32,7 +31,7 @@ export class EnterLogicService {
         }
     }
 
-    public postUser(user: FormGroup): Observable<UserViewModel>{
+    public postUser(user: UserViewModel): Observable<UserViewModel>{
         return this._http.post<UserViewModel>(this.adress, user);
     }
 

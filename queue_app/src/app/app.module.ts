@@ -16,17 +16,18 @@ import { SkeletonLoaderModule } from './modules/board/components/skeleton-loader
 import { TableInfoComponent } from './modules/board/components/table-info/table-info.component';
 import { TableComponent } from './modules/board/components/table/table.component';
 import { UserProfileComponent } from './modules/other/components/user-profile/user-profile.component';
-import { AdminProfileComponent } from './modules/other/components/admin-profile/admin-profile.component';
+import { RenameProfileComponent } from './modules/other/components/rename-profile/rename-profile.component';
+import { AuthTableComponent } from './modules/other/components/auth-table/auth-table.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'queue', pathMatch: 'full' },
     { path: 'queue', loadChildren: ():Promise<QueueModule> => import('./components/queue-wall-page/queue-wall-page.module').then((x: any) => x.QueueModule) },
     { path: 'login', component: LoginPageComponent },
     { path: 'registration', component: RegistrationPageComponent },
-    { path: 'us-profile/:id', component: UserProfileComponent },
-    { path: 'ad-profile/:id', component: AdminProfileComponent },
+    { path: 'profile/:id', component: UserProfileComponent },
     { path: 'table', component: TableComponent },
-    { path: 'rename/:id', component: UserProfileComponent },
+    { path: 'authTable', component: AuthTableComponent },
+    { path: 'rename/:id', component: RenameProfileComponent },
     { path: '**', redirectTo: 'queue' },
 ];
 
@@ -38,8 +39,9 @@ const appRoutes: Routes = [
         UserProfileComponent,
         TableComponent,
         TableInfoComponent,
-        AdminProfileComponent,
-        NavbarComponent
+        NavbarComponent,
+        RenameProfileComponent,
+        AuthTableComponent,
     ],
     imports: [
         BrowserModule,

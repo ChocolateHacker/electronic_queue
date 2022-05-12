@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { EnterLogicService } from '../../service/enter-logic.service';
+import { EnterLogicService } from '../../services/enter-logic.service';
 import { Router } from '@angular/router';
 import { UserViewModel } from 'src/app/models/user.model';
+import { AuthorizedService } from '../../services/authorized.servise';
 
 
 
@@ -22,7 +23,8 @@ export class LoginPageComponent implements OnInit {
 
     constructor(
         private _router: Router,
-        private _enterLogicService: EnterLogicService
+        private _enterLogicService: EnterLogicService,
+        private _autorizated: AuthorizedService
     ) {
     }
 
@@ -36,10 +38,9 @@ export class LoginPageComponent implements OnInit {
                     const user: UserViewModel | undefined = x.find((a: UserViewModel) => {
                         return a.email === this.form.value.email && a.password === this.form.value.password;
                     });
-                    if (user?.post === 'admin') {
-                        this._router.navigate(['ad-profile/' + user.id]);
-                    } else if (user?.post === 'user') {
-                        this._router.navigate(['us-profile/' + user.id]);
+                    if(user){
+                        this._autorizated.userNow = user;
+                        this._router.navigate(['profile/' + this._autorizated.userNow.id]);
                     } else {
                         alert('user not found');
                     }

@@ -68,6 +68,7 @@
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
       "busyness": "Свободно",
+      "userId": 0,
       "isFree":"true"
     },
     {
@@ -76,6 +77,7 @@
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
       "busyness": "Свободно",
+      "userId": 0,
       "isFree":"true"
     },
     {
@@ -84,6 +86,7 @@
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
       "busyness": "Свободно",
+      "userId": 0,
       "isFree":"true"
     },
     {
@@ -92,6 +95,7 @@
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
       "busyness": "Свободно",
+      "userId": 0,
       "isFree":"true"
     },
     {
@@ -100,6 +104,7 @@
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
       "busyness": "Свободно",
+      "userId": 0,
       "isFree":"true"
     },
     {
@@ -108,38 +113,61 @@
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
       "busyness": "Свободно",
+      "userId": 0,
       "isFree":"true"
     },
     {
       "id": 7,
-      "time": "15:30",
+      "time": "15:00",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
       "busyness": "Свободно",
+      "userId": 0,
       "isFree":"true"
     },
     {
       "id": 8,
-      "time": "16:30",
+      "time": "15:30",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
       "busyness": "Свободно",
+      "userId": 0,
       "isFree":"true"
     },
     {
       "id": 9,
-      "time": "17:00",
+      "time": "16:00",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
       "busyness": "Свободно",
+      "userId": 0,
       "isFree":"true"
     },
     {
       "id": 10,
+      "time": "16:30",
+      "docName": "Мем И.А.",
+      "activity": "Прием у аллерголога",
+      "busyness": "Свободно",
+      "userId": 0,
+      "isFree":"true"
+    },
+    {
+      "id": 11,
+      "time": "17:00",
+      "docName": "Мем И.А.",
+      "activity": "Прием у аллерголога",
+      "busyness": "Свободно",
+      "userId": 0,
+      "isFree":"true"
+    },
+    {
+      "id": 12,
       "time": "17:30",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
       "busyness": "Свободно",
+      "userId": 0,
       "isFree":"true"
     }
   ]

@@ -1,50 +1,75 @@
-<form class="rename" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="rename-content">
-      <H4 class="rename-title">Сменить данные</H4>
-      <div class="input-field">
-        <label for="name">Name*:</label>
-        <input formControlName="name" id="name" type="text" placeholder="Иван" value="">
-      </div>
-      <br>
-      <div class="input-field">
-        <label for="name">Second name*:</label>
-        <input formControlName="second_name" type="text" placeholder="Иванов">
-      </div>
-      <br>
-      <div class="input-field">
-        <label for="middle_name">Middle name:</label>
-        <input formControlName="middle_name" type="text" placeholder="Иванович">
-      </div>
-      <br>
-      <div class="input-field">
-        <label for="email">Email*:</label>
-        <input formControlName="email" id="email" type="email" placeholder="example@gmail.com">
-      </div>
-      <br>
-      <div class="input-field">
-        <label for="password">Password*:</label>
-        <input formControlName="password" id="password" type="password" required aria-required="true">
+<a class="link" (click)="comeback()">Назад</a>
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-content">
+    <H4 class="form-title">Изменить данные</H4>
+    <div class="input-field">
+      <label for="name">Name*:</label>
+      <input formControlName="name" id="name" type="text" placeholder="Иван">
+      <div class="form__error"
+        *ngIf="form.controls['name'].invalid && form.controls['name'].touched">
+          Не заполнено поле
         </div>
-      <br>
-      <div class="input-field">
-        <label for="birthdate">Birthdate*:</label>
-        <input formControlName="birthdate" id="birthdate" placeholder="01.01.1970">
-      </div>
-      <br>
-      <div class="input-field">
-        <label for="phone_number">Phone number*:</label>
-        <input formControlName="phone_number" id="phone_number"  placeholder="89121234567">
-      </div>
-      <br>
-      <div class="input-field">
-        <label for="telegram">telegram:</label>
-        <input formControlName="telegram" id="telegram" placeholder="@">
-      </div>
-      <br>
     </div>
-    <strong>*поля обязательные к заполнению</strong>
-    <br><br>
-    <div class="rename-action">
-      <button type="submit" [disabled]="form.invalid" (click)="onSubmit()">Внести изменения</button>
+    <br>
+    <div class="input-field">
+      <label for="name">Second name*:</label>
+      <input formControlName="second_name" type="text" placeholder="Иванов">
+      <div class="form__error"
+        *ngIf="form.controls['second_name'].invalid && form.controls['second_name'].touched">
+          Не заполнено поле
+        </div>
     </div>
-  </form>
+    <br>
+    <div class="input-field">
+      <label for="middle_name">Middle name:</label>
+      <input formControlName="middle_name" type="text" placeholder="Иванович">
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="email">Email*:</label>
+      <input formControlName="email" id="email" type="email" placeholder="example@gmail.com">
+      <div class="form__error"
+        *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+          Неверный формат или не заполнено поле
+        </div>
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="password">Password*:</label>
+      <input formControlName="password" id="password" type="password" required aria-required="true">
+      <div class="form__error"
+        *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+          В пароле должно быть 7 символов
+        </div>
+      </div>
+    <br>
+    <div class="input-field">
+      <label for="birthdate">Birthdate*:</label>
+      <input formControlName="birthdate" id="birthdate" placeholder="01.01.1970">
+      <div class="form__error"
+        *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+          Неверный формат или не заполнено поле
+        </div>
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="phone_number">Phone number*:</label>
+      <input formControlName="phone_number" id="phone_number"  placeholder="89121234567">
+      <div class="form__error"
+        *ngIf="form.controls['phone_number'].invalid && form.controls['phone_number'].touched">
+          Должно быть 11 цифр
+        </div>
+    </div>
+    <br>
+    <div class="input-field">
+      <label for="telegram">telegram:</label>
+      <input formControlName="telegram" id="telegram" placeholder="@">
+    </div>
+    <br>
+  </div>
+  <strong>*поля обязательные к заполнению</strong>
+  <br><br>
+  <div class="form-action">
+    <button type="submit" [disabled]="form.invalid" (click)="onSubmit()">Редактировать</button>
+  </div>
+</form>

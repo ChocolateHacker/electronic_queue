@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { EnterLogicService } from '../../service/enter-logic.service';
+import { UserViewModel } from 'src/app/models/user.model';
+import { EnterLogicService } from '../../services/enter-logic.service';
 
 
 
@@ -13,7 +14,7 @@ import { EnterLogicService } from '../../service/enter-logic.service';
 })
 export class RegistrationPageComponent implements OnInit {
     public form!: FormGroup;
-    public newUser!: any;
+    @Output() public newUser!: UserViewModel;
 
     constructor(
         private _http: EnterLogicService,
@@ -44,7 +45,7 @@ export class RegistrationPageComponent implements OnInit {
         this._router.navigate(['/login']);
     };
 
-    private pushToServer(user: FormGroup): void{
+    private pushToServer(user: UserViewModel): void{
         this._http.postUser(user)
             .subscribe({
                 next: () => alert('Sign up Successful'),

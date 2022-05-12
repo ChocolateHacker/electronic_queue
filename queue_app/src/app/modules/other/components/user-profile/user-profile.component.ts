@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserViewModel } from 'src/app/models/user.model';
-import { EnterLogicService } from 'src/app/modules/auth/service/enter-logic.service';
+import { AuthorizedService } from 'src/app/modules/auth/services/authorized.servise';
+import { EnterLogicService } from 'src/app/modules/auth/services/enter-logic.service';
 
 @Component({
     selector: 'app-user-profile',
@@ -10,19 +11,22 @@ import { EnterLogicService } from 'src/app/modules/auth/service/enter-logic.serv
 })
 export class UserProfileComponent implements OnInit {
     public user!: UserViewModel | undefined;
+    RenameProfileComponent: any;
 
     constructor(
         private _routing: ActivatedRoute,
-        private _http: EnterLogicService
+        private _enterLogicService: EnterLogicService,
+        private _autorizated: AuthorizedService
     ) {
     }
 
     public ngOnInit(): void {
         const id: number = Number(this._routing.snapshot.paramMap.get('id'));
-        this._http.getUser(id)
+        this._enterLogicService.getUser(id)
             .subscribe((user: UserViewModel) => {
+                this._autorizated.userNow = user;
                 this.user = user;
             });
+        this.user = this._autorizated.userNow;
     }
-
 }
