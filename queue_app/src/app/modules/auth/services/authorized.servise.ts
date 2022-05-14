@@ -10,4 +10,5 @@ import { UserViewModel } from 'src/app/models/user.model';
 export class AuthorizedService {
     @Input() public form!: FormGroup;
     public userNow!: UserViewModel;
+    public authComplete!: boolean;
 }

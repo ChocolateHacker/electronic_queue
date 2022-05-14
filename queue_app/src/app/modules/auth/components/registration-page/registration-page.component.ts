@@ -38,8 +38,7 @@ export class RegistrationPageComponent implements OnInit {
             email: this.form.value.email,
             phoneNumber: this.form.value.phone_number,
             password: this.form.value.password,
-            post: this.form.value.post,
-            telegram!:this.form.value.telegram
+            post: this.form.value.post
         };
         this.pushToServer(this.newUser);
         this._router.navigate(['/login']);
@@ -62,8 +61,7 @@ export class RegistrationPageComponent implements OnInit {
             phone_number: new FormControl(null, [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^[0-9]{11}')]),
             password: new FormControl(null, [Validators.required, Validators.minLength(7)]),
             email: new FormControl(null, [Validators.required, Validators.email]),
-            birthdate: new FormControl(null, [Validators.required, Validators.pattern('^[0-9]{2}.[0-9]{2}.[0-9]{4}')]),
-            telegram: new FormControl(null)
+            birthdate: new FormControl(null, [Validators.required, Validators.pattern('^[0-9]{2}.[0-9]{2}.[0-9]{4}')])
         });
     }
 }

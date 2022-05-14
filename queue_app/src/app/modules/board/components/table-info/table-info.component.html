@@ -1,9 +1,9 @@
-<div class="table-info">
-  <div *ngIf="time">
+<div>
+  <div *ngIf="time" class="table-info" [style.backgroundColor]="time.isFree ? 'green' : '#941919'">
     <h3>Имя врача: {{time.docName}}</h3>
     <h3>Тип: {{time.activity}}</h3>
     <h3>Время приема: {{time.time}}</h3>
-    <button (click)="onSubmit()"><a>Записаться</a></button>
+    <button *ngIf="time.isFree" (click)="onSubmit(time)">Записаться</button>
     <br>
+    </div>
   </div>
-</div>

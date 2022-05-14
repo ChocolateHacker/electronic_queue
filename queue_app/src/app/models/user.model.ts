@@ -10,7 +10,6 @@ export class UserViewModel{
     public phoneNumber: number;
     public password: string;
     public post: string;
-    public telegram?:string;
 
 
     constructor(model: IUser) {
@@ -23,6 +22,5 @@ export class UserViewModel{
         this.phoneNumber = model.phoneNumber;
         this.password = model.password;
         this.post = model.post;
-        this.telegram = model.telegram;
     }
 }

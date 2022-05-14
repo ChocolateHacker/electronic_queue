@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TableViewModel } from 'src/app/models/table.model';
 import { AuthorizedService } from 'src/app/modules/auth/services/authorized.servise';
@@ -10,7 +10,7 @@ import { RecordsLogicService } from 'src/app/modules/board/services/records-logi
     styleUrls: ['./auth-table.component.scss']
 })
 export class AuthTableComponent implements OnInit {
-
+    @Input() public time!: TableViewModel;
     public records!: TableViewModel[];
     public load: boolean = false;
     public size: number = 3;
@@ -18,9 +18,9 @@ export class AuthTableComponent implements OnInit {
     public showButton: boolean = false;
 
     constructor(
-        private _http: RecordsLogicService,
-        private _router: Router,
-        private _auhtorizated: AuthorizedService
+        private _recordsLogic: RecordsLogicService,
+        private _http: Router,
+        private _authorizedService: AuthorizedService
     ) {
     }
 
@@ -35,7 +35,7 @@ export class AuthTableComponent implements OnInit {
     }
 
     public comeback(): void{
-        this._router.navigate(['profile/' + this._auhtorizated.userNow.id]);
+        this._http.navigate(['profile/' + this._authorizedService.userNow.id]);
     }
 
     private sleep(seconds: number): void {
@@ -46,7 +46,7 @@ export class AuthTableComponent implements OnInit {
     }
 
     private getData(): void{
-        this._http.getRecords()
+        this._recordsLogic.getRecords()
             .subscribe((records: TableViewModel[]) => {
                 this.records = records;
             });

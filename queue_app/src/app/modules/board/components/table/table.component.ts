@@ -4,8 +4,7 @@ import { RecordsLogicService } from '../../services/records-logic.service';
 
 @Component({
     selector: 'app-table',
-    templateUrl: './table.component.html',
-    styleUrls: ['./table.component.scss']
+    templateUrl: './table.component.html'
 })
 export class TableComponent implements OnInit {
 
@@ -14,8 +13,9 @@ export class TableComponent implements OnInit {
     public size: number = 3;
     public showAll: boolean = false;
     public showButton: boolean = false;
+    public auth: boolean = false;
 
-    constructor(private _http: RecordsLogicService) {
+    constructor(private _recordsLogic: RecordsLogicService) {
     }
 
     public ngOnInit(): void {
@@ -36,7 +36,7 @@ export class TableComponent implements OnInit {
     }
 
     private getData(): void{
-        this._http.getRecords()
+        this._recordsLogic.getRecords()
             .subscribe((records: TableViewModel[]) => {
                 this.records = records;
             });

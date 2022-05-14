@@ -1,3 +1,8 @@
 <mat-toolbar color="primary">
-    SEVA AND CRINGE COMPANY
+    <div class="title">
+        SEVA AND CRINGE COMPANY
+    </div>
+    <div *ngIf="auth">
+        <button  class="btnExit" (click)="exit()">Выйти</button>
+    </div>
 </mat-toolbar>

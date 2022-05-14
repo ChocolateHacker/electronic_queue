@@ -1,4 +1,3 @@
-<html>
 <div *ngIf="user">
     <h1>Личный кабинет</h1>
       <h2>{{user.secondName}} {{user.name}} {{user.middleName}}</h2>
@@ -8,4 +7,12 @@
 </div>
 <a class="link" [routerLink]="['/rename/{{user.id}}']">Редактировать профиль</a>
 <a class="link" [routerLink]="['/authTable']">Записаться на прием</a>
-</html>
+<h3>
+  Ваши записи
+</h3>
+<div *ngFor="let record of records">
+    <div *ngIf="record.userId===user?.id">
+      <app-table-info [time]="record"></app-table-info>
+    <br>
+  </div>
+</div>

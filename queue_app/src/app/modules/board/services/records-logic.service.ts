@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { TableViewModel } from 'src/app/models/table.model';
+import { UserViewModel } from 'src/app/models/user.model';
 
 
 
@@ -11,7 +11,7 @@ import { TableViewModel } from 'src/app/models/table.model';
     providedIn: 'root'
 })
 export class RecordsLogicService {
-    public adress: string = 'http://localhost:3000/records';
+    public adress: string = 'http://localhost:3000/records/';
     public records!: TableViewModel[];
 
     constructor(private _http: HttpClient){
@@ -40,8 +40,19 @@ export class RecordsLogicService {
     public getRecord(id: number): Observable<TableViewModel> {
         return this._http.get<TableViewModel[]>(this.adress)
             .pipe(map((records: TableViewModel[]) => {
-                return records.filter((user: TableViewModel) => user.id === id)[0];
+                return records.filter((record: TableViewModel) => record.id === id)[0];
             }));
     }
-}
 
+    public putRecord(user: UserViewModel, card: TableViewModel, free: boolean): Observable<TableViewModel>{
+        return this._http.put<TableViewModel>(this.adress + card.id, {
+            id: card.id,
+            time: card.time,
+            docName: card.docName,
+            activity: card.activity,
+            bisyness: card.busyness,
+            userId: user.id,
+            isFree: free
+        });
+    }
+}

@@ -1,4 +1,6 @@
+<div *ngIf="!auth">
 <a class="link" [routerLink]="['/queue']">На главную</a>
+</div>
 <div class="load">
 <app-skeleton-loader *ngIf="!load"></app-skeleton-loader>
 <div *ngIf="!showAll">
