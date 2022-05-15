@@ -50,8 +50,18 @@ export class RecordsLogicService {
             time: card.time,
             docName: card.docName,
             activity: card.activity,
-            bisyness: card.busyness,
             userId: user.id,
+            isFree: free
+        });
+    }
+
+    public putCancelRecord(card: TableViewModel, free: boolean): Observable<TableViewModel>{
+        return this._http.put<TableViewModel>(this.adress + card.id, {
+            id: card.id,
+            time: card.time,
+            docName: card.docName,
+            activity: card.activity,
+            userId: 0,
             isFree: free
         });
     }

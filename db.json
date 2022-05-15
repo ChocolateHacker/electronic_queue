@@ -17,7 +17,7 @@
       "middleName": "Сергеевич",
       "birthdate": "06.07.1799",
       "email": "alex.pushka@yandex.ru",
-      "phoneNumber": "89752156022",
+      "phoneNumber": "89752156021",
       "password": "scratchingtheheart",
       "id": 2
     },
@@ -61,16 +61,14 @@
       "time": "12:00",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "bisyness": "Свободно",
       "userId": 0,
-      "isFree": false
+      "isFree": true
     },
     {
       "id": 2,
       "time": "12:30",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "busyness": "Свободно",
       "userId": 0,
       "isFree": true
     },
@@ -79,7 +77,6 @@
       "time": "13:00",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "busyness": "Свободно",
       "userId": 0,
       "isFree": true
     },
@@ -88,7 +85,6 @@
       "time": "13:30",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "busyness": "Свободно",
       "userId": 0,
       "isFree": true
     },
@@ -97,7 +93,6 @@
       "time": "14:00",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "busyness": "Свободно",
       "userId": 0,
       "isFree": true
     },
@@ -106,7 +101,6 @@
       "time": "14:30",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "busyness": "Свободно",
       "userId": 0,
       "isFree": true
     },
@@ -115,7 +109,6 @@
       "time": "15:00",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "busyness": "Свободно",
       "userId": 0,
       "isFree": true
     },
@@ -124,7 +117,6 @@
       "time": "15:30",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "busyness": "Свободно",
       "userId": 0,
       "isFree": true
     },
@@ -133,7 +125,6 @@
       "time": "16:00",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "busyness": "Свободно",
       "userId": 0,
       "isFree": true
     },
@@ -142,7 +133,6 @@
       "time": "16:30",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "busyness": "Свободно",
       "userId": 0,
       "isFree": true
     },
@@ -151,7 +141,6 @@
       "time": "17:00",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "busyness": "Свободно",
       "userId": 0,
       "isFree": true
     },
@@ -160,7 +149,6 @@
       "time": "17:30",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "busyness": "Свободно",
       "userId": 0,
       "isFree": true
     }

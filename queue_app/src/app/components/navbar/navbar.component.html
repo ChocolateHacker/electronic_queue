@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
     <div class="title">
-        SEVA AND CRINGE COMPANY
+        SAVE CRINGE COMPANY
     </div>
-    <div *ngIf="auth">
+    <div *ngIf="isAuthorized">
         <button  class="btnExit" (click)="exit()">Выйти</button>
     </div>
 </mat-toolbar>

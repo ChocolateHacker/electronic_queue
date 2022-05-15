@@ -10,9 +10,11 @@
 <h3>
   Ваши записи
 </h3>
+<app-skeleton-loader *ngIf="!load"></app-skeleton-loader>
 <div *ngFor="let record of records">
     <div *ngIf="record.userId===user?.id">
       <app-table-info [time]="record"></app-table-info>
+      <button (click)="cancelRecord(record)">Отменить запись</button>
     <br>
   </div>
 </div>

@@ -13,8 +13,9 @@ import { RecordsLogicService } from 'src/app/modules/board/services/records-logi
 })
 export class UserProfileComponent implements OnInit {
     @Input() public records!: TableViewModel[];
-    public user!: UserViewModel | undefined;
+    public user!: UserViewModel;
     public size: number = -1;
+    public load: boolean = false;
 
     constructor(
         private _routing: ActivatedRoute,
@@ -32,9 +33,27 @@ export class UserProfileComponent implements OnInit {
                 this.user = user;
             });
         this.user = this._autorizated.userNow;
+        this.sleep(2);
+    }
+
+    public cancelRecord(record: TableViewModel): void{
+        this._recordsLogic.putCancelRecord(record, true)
+            .subscribe({
+                error: () => alert('Error')
+            });
+    }
+
+    private sleep(seconds: number): void {
+        setInterval(() => {
+            this.getData();
+            this.load = true;
+        }, seconds * 1000);
+    }
+
+    private getData(): void{
         this._recordsLogic.getRecords()
-            .subscribe((record: TableViewModel[]) => {
-                this.records = record;
+            .subscribe((records: TableViewModel[]) => {
+                this.records = records;
             });
     }
 }
