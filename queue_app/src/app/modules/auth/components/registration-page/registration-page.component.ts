@@ -1,7 +1,8 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, HostBinding, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserViewModel } from 'src/app/models/user.model';
+import { fadeTrigger } from 'src/app/modules/other/animations/fade.animation';
 import { EnterLogicService } from '../../services/enter-logic.service';
 
 
@@ -10,9 +11,11 @@ import { EnterLogicService } from '../../services/enter-logic.service';
 @Component({
     selector: 'app-registration-page',
     templateUrl: './registration-page.component.html',
-    styleUrls: ['./styles/registration-page.component.scss']
+    styleUrls: ['./styles/registration-page.component.scss'],
+    animations: [fadeTrigger]
 })
 export class RegistrationPageComponent implements OnInit {
+    @HostBinding('@fade') public a: boolean = true;
     public form!: FormGroup;
     @Output() public newUser!: UserViewModel;
 

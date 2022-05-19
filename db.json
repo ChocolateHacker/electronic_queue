@@ -44,15 +44,14 @@
       "post": "user"
     },
     {
-      "id": 5,
       "name": "Ксения",
       "secondName": "Сонина",
-      "middleName": "",
+      "middleName": "Викторовна",
       "birthdate": "15.01.2002",
       "email": "mamu.ebal@mail.ru",
       "phoneNumber": "89827565873",
       "password": "krasivieGlaza",
-      "post": "user"
+      "id": 5
     }
   ],
   "records": [

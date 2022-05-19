@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { TableViewModel } from 'src/app/models/table.model';
+import { fadeTrigger } from 'src/app/modules/other/animations/fade.animation';
 import { RecordsLogicService } from '../../services/records-logic.service';
 
 @Component({
     selector: 'app-table',
-    templateUrl: './table.component.html'
+    templateUrl: './table.component.html',
+    animations: [fadeTrigger]
 })
 export class TableComponent implements OnInit {
-
+    @HostBinding('@fade') public a: boolean = true;
     public records!: TableViewModel[];
     public load: boolean = false;
     public size: number = 3;

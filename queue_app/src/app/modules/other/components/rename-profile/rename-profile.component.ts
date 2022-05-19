@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserViewModel } from 'src/app/models/user.model';
 import { AuthorizedService } from 'src/app/modules/auth/services/authorized.servise';
 import { EnterLogicService } from 'src/app/modules/auth/services/enter-logic.service';
+import { fadeTrigger } from '../../animations/fade.animation';
 
 @Component({
     selector: 'app-rename-profile',
     templateUrl: './rename-profile.component.html',
-    styleUrls: ['./rename-profile.component.scss']
+    styleUrls: ['./rename-profile.component.scss'],
+    animations: [fadeTrigger]
 })
 export class RenameProfileComponent implements OnInit {
+    @HostBinding('@fade') public a: boolean = true;
     public form!: FormGroup;
     public newUser!: UserViewModel;
 

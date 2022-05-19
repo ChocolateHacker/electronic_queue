@@ -5,10 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { QueueWallPageComponent } from './queue-wall-page.component';
 
 
-const components: any[] = [
-    QueueWallPageComponent
-];
-
 const routes: Routes = [
     {
         path: '',
@@ -17,7 +13,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: components,
+    declarations: [
+        QueueWallPageComponent
+    ],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),

@@ -18,16 +18,17 @@ import { TableComponent } from './modules/board/components/table/table.component
 import { UserProfileComponent } from './modules/other/components/user-profile/user-profile.component';
 import { RenameProfileComponent } from './modules/other/components/rename-profile/rename-profile.component';
 import { AuthTableComponent } from './modules/other/components/auth-table/auth-table.component';
+import { AuthGuard } from './modules/auth/guard/auth.guard';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'queue', pathMatch: 'full' },
     { path: 'queue', loadChildren: ():Promise<QueueModule> => import('./components/queue-wall-page/queue-wall-page.module').then((x: any) => x.QueueModule) },
     { path: 'login', component: LoginPageComponent },
     { path: 'registration', component: RegistrationPageComponent },
-    { path: 'profile/:id', component: UserProfileComponent },
+    { path: 'profile/:id', canActivate: [AuthGuard], component: UserProfileComponent },
     { path: 'table', component: TableComponent },
-    { path: 'authTable', component: AuthTableComponent },
-    { path: 'rename/:id', component: RenameProfileComponent },
+    { path: 'authTable', canActivate: [AuthGuard], component: AuthTableComponent },
+    { path: 'rename/:id', canActivate: [AuthGuard], component: RenameProfileComponent },
     { path: '**', redirectTo: 'queue' },
 ];
 

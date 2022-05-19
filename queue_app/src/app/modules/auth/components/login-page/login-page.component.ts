@@ -1,18 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EnterLogicService } from '../../services/enter-logic.service';
 import { Router } from '@angular/router';
 import { UserViewModel } from 'src/app/models/user.model';
 import { AuthorizedService } from '../../services/authorized.servise';
+import { fadeTrigger } from 'src/app/modules/other/animations/fade.animation';
 
 
 
 @Component({
     selector: 'app-login-page',
     templateUrl: './login-page.component.html',
-    styleUrls: ['./styles/login-page.component.scss']
+    styleUrls: ['./styles/login-page.component.scss'],
+    animations: [fadeTrigger]
 })
 export class LoginPageComponent implements OnInit {
+    @HostBinding('@fade') public a: boolean = true;
 
     public form: FormGroup = new FormGroup({
         email: new FormControl(null, [Validators.required, Validators.email]),
