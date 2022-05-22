@@ -13,15 +13,12 @@ import { fadeTrigger } from 'src/app/modules/other/animations/fade.animation';
 })
 export class QueueWallPageComponent implements OnInit {
     @HostBinding('@fade') public a: boolean = true;
-    
     public users!: UserViewModel[];
 
     constructor() {
-        return;
     }
 
     public ngOnInit(): void {
-        return;
     }
 
 }
