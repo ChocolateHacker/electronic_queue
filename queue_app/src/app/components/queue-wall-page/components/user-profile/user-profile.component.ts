@@ -5,7 +5,7 @@ import { UserViewModel } from 'src/app/models/user.model';
 import { AuthorizedService } from 'src/app/modules/auth/services/authorized.servise';
 import { EnterLogicService } from 'src/app/modules/auth/services/enter-logic.service';
 import { RecordsLogicService } from 'src/app/modules/board/services/records-logic.service';
-import { fadeTrigger } from '../../animations/fade.animation';
+import { fadeTrigger } from '../../../../modules/other/animations/fade.animation';
 
 @Component({
     selector: 'app-user-profile',

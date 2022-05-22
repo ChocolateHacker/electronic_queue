@@ -3,12 +3,11 @@ import { Router } from '@angular/router';
 import { TableViewModel } from 'src/app/models/table.model';
 import { AuthorizedService } from 'src/app/modules/auth/services/authorized.servise';
 import { RecordsLogicService } from 'src/app/modules/board/services/records-logic.service';
-import { fadeTrigger } from '../../animations/fade.animation';
+import { fadeTrigger } from '../../../../modules/other/animations/fade.animation';
 
 @Component({
     selector: 'app-table',
     templateUrl: './auth-table.component.html',
-    styleUrls: ['./auth-table.component.scss'],
     animations: [fadeTrigger]
 })
 export class AuthTableComponent implements OnInit {
@@ -37,8 +36,8 @@ export class AuthTableComponent implements OnInit {
         this.showButton = true;
     }
 
-    public comeback(): void{
-        this._http.navigate(['profile/' + this._authorizedService.userNow.id]);
+    public get id(): number  {
+        return this._authorizedService.userNow.id;
     }
 
     private sleep(seconds: number): void {

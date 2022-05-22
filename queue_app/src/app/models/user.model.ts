@@ -7,7 +7,7 @@ export class UserViewModel{
     public middleName: string;
     public birthdate: string;
     public email: string;
-    public phoneNumber: number;
+    public phoneNumber: string;
     public password: string;
     public post: string;
 

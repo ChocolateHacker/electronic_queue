@@ -1,4 +1,4 @@
-<a class="link" (click)="comeback()">Назад</a>
+<a class="link" routerLink="../queue/profile/{{id}}">Назад</a>
 <div class="load">
 <app-skeleton-loader *ngIf="!load"></app-skeleton-loader>
 <div *ngIf="!showAll">

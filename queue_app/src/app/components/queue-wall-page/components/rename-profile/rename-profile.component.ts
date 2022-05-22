@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { UserViewModel } from 'src/app/models/user.model';
 import { AuthorizedService } from 'src/app/modules/auth/services/authorized.servise';
 import { EnterLogicService } from 'src/app/modules/auth/services/enter-logic.service';
-import { fadeTrigger } from '../../animations/fade.animation';
+import { fadeTrigger } from '../../../../modules/other/animations/fade.animation';
 
 @Component({
     selector: 'app-rename-profile',
@@ -61,12 +61,12 @@ export class RenameProfileComponent implements OnInit {
         };
         this.pushToServer(this.newUser);
         setTimeout(() =>
-            this._router.navigate(['/profile/' + this._auhtorizated.userNow.id]),
+            this._router.navigate(['../../../../queue/profile/' + this._auhtorizated.userNow.id]),
         500);
     }
 
-    public comeback(): void{
-        this._router.navigate(['profile/' + this._auhtorizated.userNow.id]);
+    public get id(): number  {
+        return this._auhtorizated.userNow.id;
     }
 
     private pushToServer(user: UserViewModel): void{

@@ -5,7 +5,7 @@ export interface IUser{
   middleName: string,
   birthdate: string,
   email: string,
-  phoneNumber: number,
+  phoneNumber: string,
   password: string,
   post: string
 }

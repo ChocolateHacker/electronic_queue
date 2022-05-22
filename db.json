@@ -1,7 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
       "name": "Всеволод",
       "secondName": "Пятков",
       "middleName": "Константинович",
@@ -9,7 +8,7 @@
       "email": "vsev@mail.ru",
       "phoneNumber": "89752157623",
       "password": "1234554321",
-      "post": "author"
+      "id": 1
     },
     {
       "name": "Александр",

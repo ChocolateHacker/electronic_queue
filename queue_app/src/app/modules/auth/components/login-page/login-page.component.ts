@@ -44,7 +44,7 @@ export class LoginPageComponent implements OnInit {
                     if(user){
                         this._autorizated.userNow = user;
                         this._autorizated.authComplete = true;
-                        this._router.navigate(['profile/' + this._autorizated.userNow.id]);
+                        this._router.navigate(['queue/profile/' + this._autorizated.userNow.id]);
                     } else {
                         alert('user not found');
                     }
