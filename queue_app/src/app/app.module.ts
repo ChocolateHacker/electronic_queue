@@ -15,6 +15,7 @@ import { UserProfileComponent } from './components/queue-wall-page/components/us
 import { RenameProfileComponent } from './components/queue-wall-page/components/rename-profile/rename-profile.component';
 import { AuthTableComponent } from './components/queue-wall-page/components/auth-table/auth-table.component';
 import { PhonePipe } from './modules/other/pipes/phone.pipe';
+import { BtnColorDirective } from './components/directives/color.directive';
 
 
 
@@ -27,7 +28,8 @@ import { PhonePipe } from './modules/other/pipes/phone.pipe';
         AuthTableComponent,
         PhonePipe,
         TableInfoComponent,
-        TableComponent
+        TableComponent,
+        BtnColorDirective
     ],
     imports: [
         BrowserModule,
@@ -38,7 +40,7 @@ import { PhonePipe } from './modules/other/pipes/phone.pipe';
         HttpClientModule,
         BrowserAnimationsModule,
         SkeletonLoaderModule,
-        MatToolbarModule
+        MatToolbarModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

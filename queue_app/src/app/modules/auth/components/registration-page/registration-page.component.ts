@@ -47,14 +47,6 @@ export class RegistrationPageComponent implements OnInit {
         this._router.navigate(['/login']);
     };
 
-    private pushToServer(user: UserViewModel): void{
-        this._http.postUser(user)
-            .subscribe({
-                next: () => alert('Sign up Successful'),
-                error: () => alert('Error')
-            });
-    }
-
     private createForm(): void {
         this.form = new FormGroup({
             id: new FormControl(null),
@@ -66,5 +58,13 @@ export class RegistrationPageComponent implements OnInit {
             email: new FormControl(null, [Validators.required, Validators.email]),
             birthdate: new FormControl(null, [Validators.required, Validators.pattern('^[0-9]{2}.[0-9]{2}.[0-9]{4}')])
         });
+    }
+
+    private pushToServer(user: UserViewModel): void{
+        this._http.postUser(user)
+            .subscribe({
+                next: () => alert('Sign up Successful'),
+                error: () => alert('Error')
+            });
     }
 }
