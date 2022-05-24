@@ -8,6 +8,7 @@ import { fadeTrigger } from '../../../../modules/other/animations/fade.animation
 @Component({
     selector: 'app-table',
     templateUrl: './auth-table.component.html',
+    styleUrls: ['./auth-table.component.scss'],
     animations: [fadeTrigger]
 })
 export class AuthTableComponent implements OnInit {
