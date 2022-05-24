@@ -8,7 +8,6 @@ import { fadeTrigger } from 'src/app/modules/other/animations/fade.animation';
 @Component({
     selector: 'app-queue-wall-page',
     templateUrl: './queue-wall-page.component.html',
-    styleUrls: ['./styles/queue-wall-page.component.scss'],
     animations: [fadeTrigger]
 })
 export class QueueWallPageComponent implements OnInit {

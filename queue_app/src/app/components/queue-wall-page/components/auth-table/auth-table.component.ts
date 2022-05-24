@@ -22,7 +22,6 @@ export class AuthTableComponent implements OnInit {
 
     constructor(
         private _recordsLogic: RecordsLogicService,
-        private _http: Router,
         private _authorizedService: AuthorizedService
     ) {
     }

@@ -8,7 +8,7 @@ export class BtnColorDirective implements OnInit{
     @HostBinding('style.backgroundColor') public backgroundColor!: string;
 
     constructor(private _element: ElementRef) {
-        _element.nativeElement.style.backgroundColor = 'red';
+        this._element.nativeElement.style.backgroundColor = 'red';
     }
 
     public ngOnInit(): void {
