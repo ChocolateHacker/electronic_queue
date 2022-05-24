@@ -15,7 +15,7 @@ import { UserProfileComponent } from './components/queue-wall-page/components/us
 import { RenameProfileComponent } from './components/queue-wall-page/components/rename-profile/rename-profile.component';
 import { AuthTableComponent } from './components/queue-wall-page/components/auth-table/auth-table.component';
 import { PhonePipe } from './modules/other/pipes/phone.pipe';
-import { BtnColorDirective } from './components/directives/color.directive';
+import { BtnColorDirective } from './modules/other/directives/color.directive';
 
 
 
@@ -33,14 +33,14 @@ import { BtnColorDirective } from './components/directives/color.directive';
     ],
     imports: [
         BrowserModule,
+        SkeletonLoaderModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
         CommonModule,
         HttpClientModule,
-        BrowserAnimationsModule,
-        SkeletonLoaderModule,
-        MatToolbarModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
