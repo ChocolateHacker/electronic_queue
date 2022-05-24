@@ -15,7 +15,8 @@ const routes: Routes = [
     },
     {
         path: 'profile/:id',
-        component: UserProfileComponent
+        component: UserProfileComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'profile/rename/:id',

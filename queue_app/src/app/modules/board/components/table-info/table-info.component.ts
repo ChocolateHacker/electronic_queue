@@ -30,7 +30,7 @@ export class TableInfoComponent implements OnInit {
                 .subscribe({
                     error: () => alert('Error')
                 });
-            this._http.navigate(['/profile/' + this._authorizedService.userNow.id]);
+            this._http.navigate(['queue/profile/' + this._authorizedService.userNow.id]);
         }
     }
 }
