@@ -1,4 +1,4 @@
-import { Injectable, Input } from '@angular/core';
+import { Injectable, Input, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { UserViewModel } from 'src/app/models/user.model';
 
@@ -10,5 +10,5 @@ import { UserViewModel } from 'src/app/models/user.model';
 export class AuthorizedService {
     @Input() public form!: FormGroup;
     public userNow!: UserViewModel;
-    public authComplete!: boolean;
+    @Output() public authComplete!: boolean;
 }
