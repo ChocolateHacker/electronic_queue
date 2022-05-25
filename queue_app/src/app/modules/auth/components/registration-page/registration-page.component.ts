@@ -64,7 +64,7 @@ export class RegistrationPageComponent implements OnInit {
         this._http.postUser(user)
             .subscribe({
                 next: () => alert('Sign up Successful'),
-                error: () => alert('Error')
+                error: () => alert('Not push')
             });
     }
 }

@@ -25,15 +25,7 @@ export class RenameProfileComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.form = new FormBuilder().group({
-            name: new FormControl(null, [Validators.required]),
-            second_name: new FormControl(null, [Validators.required]),
-            middle_name: new FormControl(null),
-            phone_number: new FormControl(null, [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^[0-9]{11}')]),
-            password: new FormControl(null, [Validators.required, Validators.minLength(7)]),
-            email: new FormControl(null, [Validators.required, Validators.email]),
-            birthdate: new FormControl(null, [Validators.required, Validators.pattern('^[0-9]{2}.[0-9]{2}.[0-9]{4}')]),
-        });
+        this.getUserInfoFromFrom();
         this.getUser();
     }
 
@@ -48,6 +40,16 @@ export class RenameProfileComponent implements OnInit {
     }
 
     public onSubmit(): void {
+        this.getNewUser();
+        this.pushToServer(this.newUser);
+        this.routeUser();
+    }
+
+    public get id(): number  {
+        return this._auhtorizated.userNow.id;
+    }
+
+    private getNewUser(): UserViewModel{
         this.newUser = {
             id: this._auhtorizated.userNow.id,
             name: this.form.value.name,
@@ -59,21 +61,37 @@ export class RenameProfileComponent implements OnInit {
             password: this.form.value.password,
             post: this.form.value.post,
         };
-        this.pushToServer(this.newUser);
+
+        return this.newUser;
+    }
+
+    private getUserInfoFromFrom(): void{
+        this.form = new FormBuilder().group({
+            name: new FormControl(null, [Validators.required]),
+            second_name: new FormControl(null, [Validators.required]),
+            middle_name: new FormControl(null),
+            phone_number: new FormControl(null, [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^[0-9]{11}')]),
+            password: new FormControl(null, [Validators.required, Validators.minLength(7)]),
+            email: new FormControl(null, [Validators.required, Validators.email]),
+            birthdate: new FormControl(null, [Validators.required, Validators.pattern('^[0-9]{2}.[0-9]{2}.[0-9]{4}')]),
+        });
+    }
+
+    private routeUser():void{
         setTimeout(() =>
             this._router.navigate(['../../../../queue/profile/' + this._auhtorizated.userNow.id]),
         500);
     }
 
-    public get id(): number  {
-        return this._auhtorizated.userNow.id;
+    private pushToServer(user: UserViewModel): void{
+        this.putUserInfo(user);
+        this._auhtorizated.userNow = user;
     }
 
-    private pushToServer(user: UserViewModel): void{
-        this._enterLogic.putUser(user)
+    private putUserInfo(userInfo: UserViewModel): void{
+        this._enterLogic.putUser(userInfo)
             .subscribe({
                 error: () => alert('Error')
             });
-        this._auhtorizated.userNow = user;
     }
 }

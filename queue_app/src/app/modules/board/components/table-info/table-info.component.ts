@@ -25,12 +25,16 @@ export class TableInfoComponent implements OnInit {
             alert('Авторизируйтесь для регистрации');
             this._http.navigate(['/login']);
         } else {
+            this.putRecordInfo(card);
             alert('Вы записались');
-            this._recordsLogic.putRecord(this._authorizedService.userNow, card, false)
-                .subscribe({
-                    error: () => alert('Error')
-                });
             this._http.navigate(['queue/profile/' + this._authorizedService.userNow.id]);
         }
+    }
+
+    private putRecordInfo(card: TableViewModel):void{
+        this._recordsLogic.putRecord(this._authorizedService.userNow, card, false)
+            .subscribe({
+                error: () => alert('Error')
+            });
     }
 }

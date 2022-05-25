@@ -51,6 +51,26 @@
       "phoneNumber": "89827565873",
       "password": "krasivieGlaza",
       "id": 5
+    },
+    {
+      "id": 6,
+      "name": "Богдан",
+      "secondName": "Бог",
+      "middleName": "Данович",
+      "birthdate": "01.01.0001",
+      "email": "God.Bogdan@yandex.kek",
+      "phoneNumber": "89121111111",
+      "password": "ivan1234"
+    },
+    {
+      "id": 7,
+      "name": "Богдан",
+      "secondName": "Бог",
+      "middleName": "Данович",
+      "birthdate": "01.01.0001",
+      "email": "God.Bogdan@yandex.kek",
+      "phoneNumber": "89121111111",
+      "password": "ivan1234"
     }
   ],
   "records": [

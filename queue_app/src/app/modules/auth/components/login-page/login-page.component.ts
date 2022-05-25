@@ -49,7 +49,7 @@ export class LoginPageComponent implements OnInit {
                         alert('user not found');
                     }
                 }, error: () => {
-                    alert('Error');
+                    alert('Base not connect');
                 }
             });
     }

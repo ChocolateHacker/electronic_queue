@@ -3,15 +3,12 @@ import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit } from 
 @Directive({
     selector: '[btnColor]'
 })
-export class BtnColorDirective implements OnInit{
+export class BtnColorDirective{
     @Input('btnColor') public color!: string;
     @HostBinding('style.backgroundColor') public backgroundColor!: string;
 
     constructor(private _element: ElementRef) {
         this._element.nativeElement.style.backgroundColor = 'red';
-    }
-
-    public ngOnInit(): void {
     }
 
     @HostListener('mouseenter') public onMouseIn(): void {

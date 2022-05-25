@@ -30,11 +30,7 @@ export class UserProfileComponent implements OnInit {
 
     public ngOnInit(): void {
         const id: number = Number(this._routing.snapshot.paramMap.get('id'));
-        this._enterLogicService.getUser(id)
-            .subscribe((user: UserViewModel) => {
-                this._autorizated.userNow = user;
-                this.user = user;
-            });
+        this.getUserInfo(id);
         this.user = this._autorizated.userNow;
         this.sleep(2);
     }
@@ -43,6 +39,14 @@ export class UserProfileComponent implements OnInit {
         this._recordsLogic.putCancelRecord(record, true)
             .subscribe({
                 error: () => alert('Error')
+            });
+    }
+
+    private getUserInfo(id: number): void{
+        this._enterLogicService.getUser(id)
+            .subscribe((user: UserViewModel) => {
+                this._autorizated.userNow = user;
+                this.user = user;
             });
     }
 
