@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,6 +16,7 @@ import { RenameProfileComponent } from './components/queue-wall-page/components/
 import { AuthTableComponent } from './components/queue-wall-page/components/auth-table/auth-table.component';
 import { PhonePipe } from './modules/other/pipes/phone.pipe';
 import { BtnColorDirective } from './modules/other/directives/color.directive';
+import { AuthInterceptor } from './modules/other/interceptor/interceptor';
 
 
 
@@ -42,7 +43,11 @@ import { BtnColorDirective } from './modules/other/directives/color.directive';
         CommonModule,
         HttpClientModule,
     ],
-    providers: [],
+    providers: [{
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthInterceptor,
+        multi: true
+    },],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

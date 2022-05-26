@@ -17,7 +17,7 @@
 <div *ngFor="let record of records">
     <div *ngIf="record.userId===user?.id">
       <app-table-info [time]="record"></app-table-info>
-      <button (click)="cancelRecord(record)">Отменить запись</button>
+      <button (click)="cancelRecord(record)" (click)="sleep(1)">Отменить запись</button>
     <br>
   </div>
 </div>

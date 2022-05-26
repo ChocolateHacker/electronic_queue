@@ -1,5 +1,4 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { TableViewModel } from 'src/app/models/table.model';
 import { AuthorizedService } from 'src/app/modules/auth/services/authorized.servise';
 import { RecordsLogicService } from 'src/app/modules/board/services/records-logic.service';
@@ -41,7 +40,7 @@ export class AuthTableComponent implements OnInit {
     }
 
     private sleep(seconds: number): void {
-        setInterval(() => {
+        setTimeout(() => {
             this.getData();
             this.load = true;
         }, seconds * 1000);

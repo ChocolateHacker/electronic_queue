@@ -42,19 +42,19 @@ export class UserProfileComponent implements OnInit {
             });
     }
 
+    public sleep(seconds: number): void {
+        setTimeout(() => {
+            this.getData();
+            this.load = true;
+        }, seconds * 1000);
+    }
+
     private getUserInfo(id: number): void{
         this._enterLogicService.getUser(id)
             .subscribe((user: UserViewModel) => {
                 this._autorizated.userNow = user;
                 this.user = user;
             });
-    }
-
-    private sleep(seconds: number): void {
-        setInterval(() => {
-            this.getData();
-            this.load = true;
-        }, seconds * 1000);
     }
 
     private getData(): void{

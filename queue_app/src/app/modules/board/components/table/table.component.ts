@@ -30,11 +30,11 @@ export class TableComponent implements OnInit {
         this.showButton = true;
     }
 
-    private sleep(seconds: number): void {
-        setInterval(() => {
+    private sleep(time: number): void {
+        setTimeout(() => {
             this.getData();
             this.load = true;
-        }, seconds * 1000);
+        }, time * 1000);
     }
 
     private getData(): void{
