@@ -10,7 +10,7 @@ import { fadeTrigger } from '../../../../modules/other/animations/fade.animation
 @Component({
     selector: 'app-user-profile',
     templateUrl: './user-profile.component.html',
-    styleUrls: ['./user-profile.component.scss'],
+    styleUrls: ['./styles/user-profile.component.scss'],
     animations: [fadeTrigger]
 })
 export class UserProfileComponent implements OnInit {

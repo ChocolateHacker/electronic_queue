@@ -9,7 +9,7 @@ import { fadeTrigger } from '../../../../modules/other/animations/fade.animation
 @Component({
     selector: 'app-rename-profile',
     templateUrl: './rename-profile.component.html',
-    styleUrls: ['./rename-profile.component.scss'],
+    styleUrls: ['./styles/rename-profile.component.scss'],
     animations: [fadeTrigger]
 })
 export class RenameProfileComponent implements OnInit {

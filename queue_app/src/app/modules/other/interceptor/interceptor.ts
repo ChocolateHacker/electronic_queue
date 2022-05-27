@@ -14,8 +14,8 @@ export class AuthInterceptor implements HttpInterceptor {
             headers: req.headers.set('Session', '123456789'),
         });
 
-        return next.handle(authReq).pipe(
-            tap(
+        return next.handle(authReq)
+            .pipe(tap(
                 (event: HttpEvent<any>) => {
                     if (event instanceof HttpResponse){
                         console.log('Server response');
@@ -29,6 +29,6 @@ export class AuthInterceptor implements HttpInterceptor {
                     }
                 }
             )
-        );
+            );
     }
 }
