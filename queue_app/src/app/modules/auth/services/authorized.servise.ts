@@ -1,6 +1,6 @@
 import { Injectable, Input, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { UserViewModel } from 'src/app/models/user.model';
+import { UserViewModel } from '../../../models/user.model';
 
 
 

@@ -1,7 +1,7 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { TableViewModel } from 'src/app/models/table.model';
-import { AuthorizedService } from 'src/app/modules/auth/services/authorized.servise';
-import { RecordsLogicService } from 'src/app/modules/board/services/records-logic.service';
+import { TableViewModel } from '../../../../models/table.model';
+import { AuthorizedService } from '../../../../modules/auth/services/authorized.servise';
+import { RecordsLogicService } from '../../../../modules/board/services/records-logic.service';
 import { fadeTrigger } from '../../../../modules/other/animations/fade.animation';
 
 @Component({

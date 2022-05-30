@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { UserViewModel } from 'src/app/models/user.model';
+import { UserViewModel } from '../../../models/user.model';
 import { AuthorizedService } from './authorized.servise';
 
 

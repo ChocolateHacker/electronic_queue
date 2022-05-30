@@ -1,4 +1,4 @@
-import { IRecord } from 'src/app/models/interfaces/record.interface';
+import { IRecord } from './interfaces/record.interface';
 
 export class TableViewModel {
     public id: number;

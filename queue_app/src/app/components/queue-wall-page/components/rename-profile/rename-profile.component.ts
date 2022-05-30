@@ -1,9 +1,9 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserViewModel } from 'src/app/models/user.model';
-import { AuthorizedService } from 'src/app/modules/auth/services/authorized.servise';
-import { EnterLogicService } from 'src/app/modules/auth/services/enter-logic.service';
+import { UserViewModel } from '../../../../models/user.model';
+import { AuthorizedService } from '../../../../modules/auth/services/authorized.servise';
+import { EnterLogicService } from '../../../../modules/auth/services/enter-logic.service';
 import { fadeTrigger } from '../../../../modules/other/animations/fade.animation';
 
 @Component({

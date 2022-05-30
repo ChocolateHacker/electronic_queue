@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { TableViewModel } from 'src/app/models/table.model';
-import { UserViewModel } from 'src/app/models/user.model';
+import { TableViewModel } from '../../../models/table.model';
+import { UserViewModel } from '../../../models/user.model';
 
 
 

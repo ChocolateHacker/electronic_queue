@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { TableViewModel } from 'src/app/models/table.model';
-import { AuthorizedService } from 'src/app/modules/auth/services/authorized.servise';
+import { TableViewModel } from '../../../../models/table.model';
+import { AuthorizedService } from '../../../auth/services/authorized.servise';
 import { RecordsLogicService } from '../../services/records-logic.service';
 
 @Component({
@@ -9,16 +9,16 @@ import { RecordsLogicService } from '../../services/records-logic.service';
     templateUrl: './table-info.component.html',
     styleUrls: ['./styles/table-info.component.scss']
 })
-export class TableInfoComponent implements OnInit {
+export class TableInfoComponent{
     @Input() public time!: TableViewModel;
     public auth!: boolean;
 
     constructor(
         private _http: Router,
         private _authorizedService: AuthorizedService,
-        private _recordsLogic: RecordsLogicService) { }
-
-    public ngOnInit(): void { }
+        private _recordsLogic: RecordsLogicService
+    ) {
+    }
 
     public onSubmit(card: TableViewModel): void{
         if(!this._authorizedService.userNow){

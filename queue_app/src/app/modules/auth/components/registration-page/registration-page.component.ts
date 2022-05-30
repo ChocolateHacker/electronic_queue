@@ -1,8 +1,8 @@
-import { Component, HostBinding, OnInit, Output } from '@angular/core';
+import { Component, HostBinding, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserViewModel } from 'src/app/models/user.model';
-import { fadeTrigger } from 'src/app/modules/other/animations/fade.animation';
+import { UserViewModel } from '../../../../models/user.model';
+import { fadeTrigger } from '../../../../modules/other/animations/fade.animation';
 import { EnterLogicService } from '../../services/enter-logic.service';
 
 
@@ -14,7 +14,7 @@ import { EnterLogicService } from '../../services/enter-logic.service';
     styleUrls: ['./styles/registration-page.component.scss'],
     animations: [fadeTrigger]
 })
-export class RegistrationPageComponent implements OnInit {
+export class RegistrationPageComponent{
     @HostBinding('@fade') public a: boolean = true;
     public form!: FormGroup;
     @Output() public newUser!: UserViewModel;
@@ -24,10 +24,6 @@ export class RegistrationPageComponent implements OnInit {
         private _router: Router
     ) {
         this.createForm();
-    }
-
-    public ngOnInit(): void {
-        return;
     }
 
     public onSubmit(): void{
@@ -50,9 +46,9 @@ export class RegistrationPageComponent implements OnInit {
     private createForm(): void {
         this.form = new FormGroup({
             id: new FormControl(null),
-            name: new FormControl(null, [Validators.required]),
-            second_name: new FormControl(null, [Validators.required]),
-            middle_name: new FormControl(null),
+            name: new FormControl(null, [Validators.required, Validators.pattern('[a-zA-Z\wа-яА-Я]*')]),
+            second_name: new FormControl(null, [Validators.required, Validators.pattern('[a-zA-Z\wа-яА-Я]*')]),
+            middle_name: new FormControl(null, [Validators.pattern('[a-zA-Z\wа-яА-Я]*')]),
             phone_number: new FormControl(null, [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^[0-9]{11}')]),
             password: new FormControl(null, [Validators.required, Validators.minLength(7)]),
             email: new FormControl(null, [Validators.required, Validators.email]),

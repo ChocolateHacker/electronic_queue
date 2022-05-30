@@ -1,10 +1,10 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EnterLogicService } from '../../services/enter-logic.service';
 import { Router } from '@angular/router';
-import { UserViewModel } from 'src/app/models/user.model';
+import { UserViewModel } from '../../../../models/user.model';
 import { AuthorizedService } from '../../services/authorized.servise';
-import { fadeTrigger } from 'src/app/modules/other/animations/fade.animation';
+import { fadeTrigger } from '../../../other/animations/fade.animation';
 
 
 
@@ -14,7 +14,7 @@ import { fadeTrigger } from 'src/app/modules/other/animations/fade.animation';
     styleUrls: ['./styles/login-page.component.scss'],
     animations: [fadeTrigger]
 })
-export class LoginPageComponent implements OnInit {
+export class LoginPageComponent {
     @HostBinding('@fade') public a: boolean = true;
 
     public form: FormGroup = new FormGroup({
@@ -29,9 +29,6 @@ export class LoginPageComponent implements OnInit {
         private _enterLogicService: EnterLogicService,
         private _autorizated: AuthorizedService
     ) {
-    }
-
-    public ngOnInit(): void {
     }
 
     public onSubmit(): void{

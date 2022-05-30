@@ -8,7 +8,7 @@
       <input formControlName="name" id="name" type="text" placeholder="Иван">
       <div class="form__error"
         *ngIf="form.controls['name'].invalid && form.controls['name'].touched">
-          Не заполнено поле
+          Не заполнено поле, используйте только буквы
         </div>
     </div>
     <br>
@@ -24,6 +24,10 @@
     <div class="input-field">
       <label for="middle_name">Middle name:</label>
       <input formControlName="middle_name" type="text" placeholder="Иванович">
+      <div class="form__error"
+        *ngIf="form.controls['middle_name'].invalid">
+          Используйте только буквы
+        </div>
     </div>
     <br>
     <div class="input-field">

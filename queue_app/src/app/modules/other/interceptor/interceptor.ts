@@ -4,7 +4,6 @@ import { Observable, tap } from 'rxjs';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-    constructor() {}
 
     public intercept(
         req: HttpRequest<any>,
