@@ -67,9 +67,9 @@ export class RenameProfileComponent implements OnInit {
 
     private getUserInfoFromFrom(): void{
         this.form = new FormBuilder().group({
-            name: new FormControl(null, [Validators.required]),
-            second_name: new FormControl(null, [Validators.required]),
-            middle_name: new FormControl(null),
+            name: new FormControl(null, [Validators.required, Validators.pattern('[a-zA-Z\wа-яА-Я]*')]),
+            second_name: new FormControl(null, [Validators.required, Validators.pattern('[a-zA-Z\wа-яА-Я]*')]),
+            middle_name: new FormControl(null, [Validators.pattern('[a-zA-Z\wа-яА-Я]*')]),
             phone_number: new FormControl(null, [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^[0-9]{11}')]),
             password: new FormControl(null, [Validators.required, Validators.minLength(7)]),
             email: new FormControl(null, [Validators.required, Validators.email]),
