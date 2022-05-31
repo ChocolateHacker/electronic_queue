@@ -19,7 +19,6 @@ export class UserProfileComponent implements OnInit {
     public user!: UserViewModel;
     public size: number = -1;
     public load: boolean = false;
-    public userHaveRecord: boolean = false;
 
     constructor(
         private _routing: ActivatedRoute,
