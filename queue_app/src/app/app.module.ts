@@ -10,7 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SkeletonLoaderModule } from './modules/board/components/skeleton-loader/skeleton-loader.module';
 import { TableInfoComponent } from './modules/board/components/table-info/table-info.component';
-import { TableComponent } from './modules/board/components/table/table.component';
 import { UserProfileComponent } from './components/queue-wall-page/components/user-profile/user-profile.component';
 import { RenameProfileComponent } from './components/queue-wall-page/components/rename-profile/rename-profile.component';
 import { AuthTableComponent } from './components/queue-wall-page/components/auth-table/auth-table.component';
@@ -30,7 +29,6 @@ import { AuthorizedService } from './modules/auth/services/authorized.servise';
         AuthTableComponent,
         PhonePipe,
         TableInfoComponent,
-        TableComponent,
         BtnColorDirective
     ],
     imports: [
