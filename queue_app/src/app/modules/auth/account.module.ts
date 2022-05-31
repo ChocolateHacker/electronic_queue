@@ -18,7 +18,7 @@ import { EnterLogicService } from './services/enter-logic.service';
         AccountRoutingModule
     ],
     providers: [
-        //EnterLogicService
+        EnterLogicService
     ],
     bootstrap: []
 })

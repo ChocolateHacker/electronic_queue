@@ -89,8 +89,8 @@
       "time": "12:00",
       "docName": "Мем И.А.",
       "activity": "Прием у аллерголога",
-      "userId": 1,
-      "isFree": false
+      "userId": 0,
+      "isFree": true
     },
     {
       "id": 2,

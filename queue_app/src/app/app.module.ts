@@ -17,6 +17,7 @@ import { AuthTableComponent } from './components/queue-wall-page/components/auth
 import { PhonePipe } from './modules/other/pipes/phone.pipe';
 import { BtnColorDirective } from './modules/other/directives/color.directive';
 import { AuthInterceptor } from './modules/other/interceptor/interceptor';
+import { AuthorizedService } from './modules/auth/services/authorized.servise';
 
 
 
@@ -47,7 +48,9 @@ import { AuthInterceptor } from './modules/other/interceptor/interceptor';
         provide: HTTP_INTERCEPTORS,
         useClass: AuthInterceptor,
         multi: true
-    }],
+    },
+    AuthorizedService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

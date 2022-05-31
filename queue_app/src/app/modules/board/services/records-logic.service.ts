@@ -7,9 +7,7 @@ import { UserViewModel } from '../../../models/user.model';
 
 
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class RecordsLogicService {
     public adress: string = 'http://localhost:3000/records/';
     public records!: TableViewModel[];

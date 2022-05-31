@@ -3,9 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { TableViewModel } from '../../../../models/table.model';
 import { UserViewModel } from '../../../../models/user.model';
 import { AuthorizedService } from '../../../../modules/auth/services/authorized.servise';
-import { EnterLogicService } from '../../../../modules/auth/services/enter-logic.service';
 import { RecordsLogicService } from '../../../../modules/board/services/records-logic.service';
 import { fadeTrigger } from '../../../../modules/other/animations/fade.animation';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'app-user-profile',
@@ -22,7 +22,7 @@ export class UserProfileComponent implements OnInit {
 
     constructor(
         private _routing: ActivatedRoute,
-        private _enterLogicService: EnterLogicService,
+        private _userService: UserService,
         private _recordsLogic: RecordsLogicService,
         private _autorizated: AuthorizedService
     ) {
@@ -61,7 +61,7 @@ export class UserProfileComponent implements OnInit {
     }
 
     private getUserInfo(id: number): void{
-        this._enterLogicService.getUser(id)
+        this._userService.getUser(id)
             .subscribe((user: UserViewModel) => {
                 this._autorizated.userNow = user;
                 this.user = user;

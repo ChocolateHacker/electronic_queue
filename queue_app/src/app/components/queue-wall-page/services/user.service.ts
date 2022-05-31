@@ -1,32 +1,18 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { UserViewModel } from '../../../models/user.model';
-import { AuthorizedService } from './authorized.servise';
-
-
+import { UserViewModel } from 'src/app/models/user.model';
+import { AuthorizedService } from 'src/app/modules/auth/services/authorized.servise';
 
 @Injectable()
-export class EnterLogicService {
+export class UserService {
+
     public readonly adress: string = 'http://localhost:3000/users/';
-    public userList!: UserViewModel[];
 
     constructor(
-        private _http: HttpClient,
-        private _auhtorizated: AuthorizedService
-    ){
-    }
-
-    public getData(): void {
-        this._http.get<UserViewModel[]>(this.adress)
-            .subscribe((x: UserViewModel[]) => {
-                this.userList = x;
-            });
-    }
-
-    public postUser(user: UserViewModel): Observable<UserViewModel>{
-        return this._http.post<UserViewModel>(this.adress, user);
-    }
+      private _auhtorizated: AuthorizedService,
+      private _http: HttpClient
+    ) {}
 
     public putUser(user: UserViewModel):  Observable<UserViewModel>{
         return this._http.put<UserViewModel>(this.adress + this._auhtorizated.userNow.id, {
@@ -46,9 +32,5 @@ export class EnterLogicService {
             .pipe(map((users: UserViewModel[]) => {
                 return users.filter((user: UserViewModel) => user.id === id)[0];
             }));
-    }
-
-    public getUsers(): Observable<UserViewModel[]> {
-        return this._http.get<UserViewModel[]>(this.adress);
     }
 }

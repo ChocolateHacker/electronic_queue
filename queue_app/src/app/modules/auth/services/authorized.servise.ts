@@ -4,9 +4,7 @@ import { UserViewModel } from '../../../models/user.model';
 
 
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class AuthorizedService {
     @Input() public form!: FormGroup;
     public userNow!: UserViewModel;

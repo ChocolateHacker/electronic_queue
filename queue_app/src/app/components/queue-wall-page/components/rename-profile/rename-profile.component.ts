@@ -3,8 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { UserViewModel } from '../../../../models/user.model';
 import { AuthorizedService } from '../../../../modules/auth/services/authorized.servise';
-import { EnterLogicService } from '../../../../modules/auth/services/enter-logic.service';
 import { fadeTrigger } from '../../../../modules/other/animations/fade.animation';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'app-rename-profile',
@@ -20,7 +20,7 @@ export class RenameProfileComponent implements OnInit {
     constructor(
         private _router: Router,
         private _auhtorizated: AuthorizedService,
-        private _enterLogic: EnterLogicService
+        private _userService: UserService
     ) {
     }
 
@@ -89,7 +89,7 @@ export class RenameProfileComponent implements OnInit {
     }
 
     private putUserInfo(userInfo: UserViewModel): void{
-        this._enterLogic.putUser(userInfo)
+        this._userService.putUser(userInfo)
             .subscribe({
                 error: () => alert('Error')
             });
