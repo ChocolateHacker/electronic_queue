@@ -12,10 +12,6 @@ import { UserService } from './services/user.service';
 
 
 const routes: Routes = [
-    //{
-    //    path: '',
-    //    component: QueueWallPageComponent
-    //},
     {
         path: 'profile/:id',
         component: UserProfileComponent,
@@ -26,8 +22,8 @@ const routes: Routes = [
         component: RenameProfileComponent,
         canActivate: [AuthGuard]
     },
-    { 
-        path: 'authTable', 
+    {
+        path: 'authTable',
         component: AuthTableComponent,
         canActivate: [AuthGuard]
     }
