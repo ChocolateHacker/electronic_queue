@@ -19,6 +19,7 @@ export class UserProfileComponent implements OnInit {
     public user!: UserViewModel;
     public size: number = -1;
     public load: boolean = false;
+    public userHaveRecord: boolean = false;
 
     constructor(
         private _routing: ActivatedRoute,
@@ -47,6 +48,17 @@ export class UserProfileComponent implements OnInit {
             this.getData();
             this.load = true;
         }, seconds * 1000);
+    }
+
+    public get checkRecordByUser(): boolean{
+        let checkComplete: boolean = false;
+        this.records.forEach((record: TableViewModel) => {
+            if(record.userId === this._autorizated.userNow.id){
+                checkComplete = true;
+            };
+        });
+
+        return checkComplete;
     }
 
     private getUserInfo(id: number): void{
