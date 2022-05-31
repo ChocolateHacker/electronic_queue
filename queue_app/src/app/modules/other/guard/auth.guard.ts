@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
             return of(true);
         } else {
             alert('Пожалуйста авторизируйтесь');
-            this._router.navigate(['/login']);
+            this._router.navigate(['/account/login']);
 
             return of(false);
         };

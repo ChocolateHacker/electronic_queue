@@ -18,7 +18,7 @@ export class NavbarComponent{
     public exit(): void {
         alert('Вы вышли из системы');
         this._auhtorizated.authComplete = false;
-        this._router.navigate(['/queue']);
+        this._router.navigate(['/account']);
     }
 
     public get isAuthorized() : boolean {

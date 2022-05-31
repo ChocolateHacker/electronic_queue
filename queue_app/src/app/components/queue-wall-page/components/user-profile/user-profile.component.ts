@@ -51,8 +51,8 @@ export class UserProfileComponent implements OnInit {
 
     public get checkRecordByUser(): boolean{
         let checkComplete: boolean = false;
-        this.records.forEach((record: TableViewModel) => {
-            if(record.userId === this._autorizated.userNow.id){
+        this.records?.forEach((record: TableViewModel) => {
+            if(record.userId && record.userId === this._autorizated.userNow.id){
                 checkComplete = true;
             };
         });

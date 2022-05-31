@@ -1,7 +1,7 @@
 <mat-toolbar class="toolbar">
-  <a routerLink="../queue/profile/{{id}}">Личный кабинет</a> > <strong>Запись на прием</strong>
+  <a routerLink="../user/profile/{{id}}">Личный кабинет</a> > <strong>Запись на прием</strong>
 </mat-toolbar>
-<a class="link" routerLink="../queue/profile/{{id}}">Назад</a>
+<a class="link" routerLink="../../user/profile/{{id}}">Назад</a>
 <div class="load">
 <app-skeleton-loader *ngIf="!load"></app-skeleton-loader>
 <div *ngIf="!showAll">

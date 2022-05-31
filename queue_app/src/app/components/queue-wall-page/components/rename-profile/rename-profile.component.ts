@@ -79,7 +79,7 @@ export class RenameProfileComponent implements OnInit {
 
     private routeUser():void{
         setTimeout(() =>
-            this._router.navigate(['../../../../queue/profile/' + this._auhtorizated.userNow.id]),
+            this._router.navigate(['../../../../user/profile/' + this._auhtorizated.userNow.id]),
         500);
     }
 

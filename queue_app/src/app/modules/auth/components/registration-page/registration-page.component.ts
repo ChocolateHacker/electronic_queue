@@ -40,7 +40,7 @@ export class RegistrationPageComponent{
             post: this.form.value.post
         };
         this.pushToServer(this.newUser);
-        this._router.navigate(['/login']);
+        this._router.navigate(['/account/login']);
     };
 
     private createForm(): void {

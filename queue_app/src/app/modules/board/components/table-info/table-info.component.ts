@@ -27,7 +27,7 @@ export class TableInfoComponent{
         } else {
             this.putRecordInfo(card);
             alert('Вы записались');
-            this._http.navigate(['queue/profile/' + this._authorizedService.userNow.id]);
+            this._http.navigate(['user/profile/' + this._authorizedService.userNow.id]);
         }
     }
 
